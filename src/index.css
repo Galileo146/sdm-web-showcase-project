@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +36,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +90,49 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .container-wide {
+    @apply container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+  }
+  
+  .btn-primary {
+    @apply bg-sdm-red text-white hover:bg-red-700 transition-all duration-300;
+  }
+  
+  .btn-outline {
+    @apply border border-sdm-red text-sdm-red bg-transparent hover:bg-sdm-red/10 transition-all duration-300;
+  }
+  
+  .hero {
+    @apply relative h-[60vh] min-h-[400px] w-full flex items-center justify-center bg-black/30 bg-blend-overlay bg-center bg-cover;
+  }
+  
+  .hero-content {
+    @apply text-white text-center max-w-3xl px-4;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-10 relative;
+  }
+  
+  .section-title::after {
+    content: "";
+    @apply absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-sdm-red;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
   }
 }
