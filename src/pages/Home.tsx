@@ -1,47 +1,36 @@
-
 import Hero from "../components/Hero";
 import NewsCard from "../components/NewsCard";
 import InterestSection from "../components/InterestSection";
 import { Separator } from "@/components/ui/separator";
-
 const Home = () => {
-  const newsItems = [
-    {
-      image: "https://via.placeholder.com/600x400?text=News+1",
-      date: "15 Aprile 2025",
-      title: "Nuova collaborazione con Leonardo per il settore aerospaziale",
-      excerpt: "SDM Group annuncia una nuova importante collaborazione con Leonardo nel settore aerospaziale per lo sviluppo di componenti innovativi ad alta precisione...",
-      link: "/blog/news-1",
-    },
-    {
-      image: "https://via.placeholder.com/600x400?text=News+2",
-      date: "10 Marzo 2025",
-      title: "Inaugurazione del nuovo stabilimento di Rivoli",
-      excerpt: "A seguito dell'espansione delle attività produttive, SDM Group ha inaugurato il nuovo stabilimento di Rivoli, ampliando la propria capacità produttiva con macchinari di ultima generazione...",
-      link: "/blog/news-2",
-    },
-    {
-      image: "https://via.placeholder.com/600x400?text=News+3",
-      date: "25 Febbraio 2025",
-      title: "SDM Polska celebra il secondo anniversario",
-      excerpt: "SDM Polska celebra due anni di attività con risultati eccellenti. La sede di Lublin continua a crescere, assumendo nuovo personale specializzato e ampliando il proprio portfolio clienti...",
-      link: "/blog/news-3",
-    },
-  ];
-
-  return (
-    <div>
+  const newsItems = [{
+    image: "https://via.placeholder.com/600x400?text=News+1",
+    date: "15 Aprile 2025",
+    title: "Nuova collaborazione con Leonardo per il settore aerospaziale",
+    excerpt: "SDM Group annuncia una nuova importante collaborazione con Leonardo nel settore aerospaziale per lo sviluppo di componenti innovativi ad alta precisione...",
+    link: "/blog/news-1"
+  }, {
+    image: "https://via.placeholder.com/600x400?text=News+2",
+    date: "10 Marzo 2025",
+    title: "Inaugurazione del nuovo stabilimento di Rivoli",
+    excerpt: "A seguito dell'espansione delle attività produttive, SDM Group ha inaugurato il nuovo stabilimento di Rivoli, ampliando la propria capacità produttiva con macchinari di ultima generazione...",
+    link: "/blog/news-2"
+  }, {
+    image: "https://via.placeholder.com/600x400?text=News+3",
+    date: "25 Febbraio 2025",
+    title: "SDM Polska celebra il secondo anniversario",
+    excerpt: "SDM Polska celebra due anni di attività con risultati eccellenti. La sede di Lublin continua a crescere, assumendo nuovo personale specializzato e ampliando il proprio portfolio clienti...",
+    link: "/blog/news-3"
+  }];
+  return <div>
       {/* Hero Section */}
-      <Hero 
-        backgroundImage="https://via.placeholder.com/1920x1080?text=Hero+Industrial+Image"
-        title="Da 25 anni tecnologie ed innovazione"
-      />
+      <Hero backgroundImage="https://via.placeholder.com/1920x1080?text=Hero+Industrial+Image" title="Da 25 anni tecnologie ed innovazione" />
 
       {/* New section with title, red divider, and text */}
       <section className="py-16 container-wide">
         <div className="flex flex-col md:flex-row items-start">
           <div className="md:w-1/3 mb-6 md:mb-0">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">TECNOLOGIA E INNOVAZIONE</h2>
+            <h2 className="text-4xl font-bold leading-tight md:text-2xl">TECNOLOGIA E INNOVAZIONE</h2>
           </div>
           
           <div className="hidden md:block mx-8">
@@ -65,11 +54,7 @@ const Home = () => {
           <div className="mt-12 flex flex-col md:flex-row items-center gap-10">
             <div className="md:w-1/2">
               <div className="relative">
-                <img 
-                  src="https://via.placeholder.com/800x600?text=Europe+Map" 
-                  alt="Mappa Europa con sedi SDM" 
-                  className="w-full rounded-lg"
-                />
+                <img src="https://via.placeholder.com/800x600?text=Europe+Map" alt="Mappa Europa con sedi SDM" className="w-full rounded-lg" />
                 {/* Location markers */}
                 <div className="absolute top-[40%] left-[40%] h-4 w-4 bg-sdm-red rounded-full animate-pulse">
                   <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-medium">Torino</span>
@@ -148,16 +133,7 @@ const Home = () => {
         <div className="container-wide">
           <h2 className="section-title">Notizie dal mondo SDM</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            {newsItems.map((item, index) => (
-              <NewsCard
-                key={index}
-                image={item.image}
-                date={item.date}
-                title={item.title}
-                excerpt={item.excerpt}
-                link={item.link}
-              />
-            ))}
+            {newsItems.map((item, index) => <NewsCard key={index} image={item.image} date={item.date} title={item.title} excerpt={item.excerpt} link={item.link} />)}
           </div>
         </div>
       </section>
@@ -167,23 +143,15 @@ const Home = () => {
         <div className="container-wide">
           <h2 className="text-2xl font-bold text-center mb-8">I nostri clienti</h2>
           <div className="flex flex-wrap justify-center items-center gap-8">
-            {[...Array(6)].map((_, i) => (
-              <div key={i} className="grayscale hover:grayscale-0 transition-all">
-                <img 
-                  src="https://via.placeholder.com/200x80?text=Leonardo" 
-                  alt="Leonardo" 
-                  className="h-16 object-contain"
-                />
-              </div>
-            ))}
+            {[...Array(6)].map((_, i) => <div key={i} className="grayscale hover:grayscale-0 transition-all">
+                <img src="https://via.placeholder.com/200x80?text=Leonardo" alt="Leonardo" className="h-16 object-contain" />
+              </div>)}
           </div>
         </div>
       </section>
 
       {/* Interest Section */}
       <InterestSection />
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
