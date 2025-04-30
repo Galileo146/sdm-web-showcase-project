@@ -2,6 +2,7 @@
 import Hero from "../components/Hero";
 import NewsCard from "../components/NewsCard";
 import InterestSection from "../components/InterestSection";
+import { Separator } from "@/components/ui/separator";
 
 const Home = () => {
   const newsItems = [
@@ -35,6 +36,27 @@ const Home = () => {
         backgroundImage="https://via.placeholder.com/1920x1080?text=Hero+Industrial+Image"
         title="Da 25 anni tecnologie ed innovazione"
       />
+
+      {/* New section with title, red divider, and text */}
+      <section className="py-16 container-wide">
+        <div className="flex flex-col md:flex-row items-start">
+          <div className="md:w-1/3 mb-6 md:mb-0">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight">TECNOLOGIA E INNOVAZIONE</h2>
+          </div>
+          
+          <div className="hidden md:block mx-8">
+            <Separator orientation="vertical" className="h-full w-1 bg-sdm-red" />
+          </div>
+          
+          <div className="md:w-2/3">
+            <p className="text-lg leading-relaxed">
+              S.D.M. S.r.l. nasce nel 2000, e ha preso il suo posto tra le aziende piemontesi che lavorano nella 
+              progettazione e produzione di strumenti per il settore manifatturiero industriale soprattutto nel 
+              campo aerospaziale.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Technology and Innovation Section */}
       <section className="section-padding">
