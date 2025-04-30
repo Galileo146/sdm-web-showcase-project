@@ -6,13 +6,14 @@ interface InfoCardProps {
   title: string;
   description: string;
   link: string;
+  darkBg?: boolean;
 }
 
-const InfoCard = ({ image, title, description, link }: InfoCardProps) => {
+const InfoCard = ({ image, title, description, link, darkBg = false }: InfoCardProps) => {
   return (
     <Link 
       to={link}
-      className="group block bg-white shadow-md rounded-lg overflow-hidden card-hover"
+      className={`group block ${darkBg ? 'bg-gray-800' : 'bg-white'} shadow-md rounded-lg overflow-hidden card-hover`}
     >
       <div className="relative h-48 overflow-hidden">
         <img 
@@ -25,8 +26,8 @@ const InfoCard = ({ image, title, description, link }: InfoCardProps) => {
         </div>
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
-        <p className="text-gray-600">{description}</p>
+        <h3 className={`text-xl font-bold mb-2 ${darkBg ? 'text-white' : ''}`}>{title}</h3>
+        <p className={darkBg ? 'text-gray-300' : 'text-gray-600'}>{description}</p>
       </div>
     </Link>
   );

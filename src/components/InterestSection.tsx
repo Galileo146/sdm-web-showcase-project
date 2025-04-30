@@ -1,7 +1,11 @@
 
 import InfoCard from "./InfoCard";
 
-const InterestSection = () => {
+interface InterestSectionProps {
+  darkBg?: boolean;
+}
+
+const InterestSection = ({ darkBg = false }: InterestSectionProps) => {
   const cards = [
     {
       title: "Chi siamo",
@@ -24,9 +28,11 @@ const InterestSection = () => {
   ];
 
   return (
-    <section className="bg-gray-100 section-padding">
+    <section className={`section-padding ${darkBg ? 'bg-gray-900 text-white' : 'bg-gray-100'}`}>
       <div className="container-wide">
-        <h2 className="section-title">Ti potrebbe interessare</h2>
+        <h2 className={`section-title ${darkBg ? 'text-white' : ''}`}>
+          {darkBg ? 'TI POTREBBE INTERESSARE' : 'Ti potrebbe interessare'}
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           {cards.map((card) => (
             <InfoCard
@@ -35,6 +41,7 @@ const InterestSection = () => {
               title={card.title}
               description={card.description}
               link={card.link}
+              darkBg={darkBg}
             />
           ))}
         </div>
