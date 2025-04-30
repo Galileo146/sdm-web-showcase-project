@@ -38,7 +38,7 @@ const Home = () => {
           </div>
           
           <div className="md:w-2/3">
-            <p className="text-lg leading-relaxed">
+            <p className="leading-relaxed text-base">
               S.D.M. S.r.l. nasce nel 2000, e ha preso il suo posto tra le aziende piemontesi che lavorano nella 
               progettazione e produzione di strumenti per il settore manifatturiero industriale soprattutto nel 
               campo aerospaziale.
