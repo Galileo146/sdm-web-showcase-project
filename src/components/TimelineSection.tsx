@@ -145,10 +145,13 @@ const TimelineSection = () => {
   return (
     <section className="py-16">
       <div className="container-wide">
-        {/* Timeline Title */}
-        <div className="flex items-center mb-16">
-          <div className="w-1 bg-sdm-red h-12 mr-4"></div>
-          <h2 className="text-3xl font-bold">STORIA</h2>
+        {/* Updated Timeline Title */}
+        <div className="flex items-start mb-16">
+          <div className="w-1 bg-sdm-red h-20 mr-4 mt-1"></div>
+          <div>
+            <h2 className="text-3xl font-bold">LA NOSTRA</h2>
+            <h2 className="text-3xl font-bold">STORIA</h2>
+          </div>
         </div>
         
         {/* Timeline Items in Carousel */}
