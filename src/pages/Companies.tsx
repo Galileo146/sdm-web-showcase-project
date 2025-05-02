@@ -54,11 +54,12 @@ const Companies = () => {
       logo: "/lovable-uploads/4d73b204-8c56-40be-bd09-eed7dcdf9e9f.png",
       description: "Chiales Tools è una società specializzata nella produzione di utensili e attrezzature di alta precisione per l'industria manifatturiera. Con un'esperienza consolidata nel settore metalmeccanico, Chiales Tools offre soluzioni personalizzate per lavorazioni complesse, garantendo la massima qualità e precisione. L'azienda fa parte del gruppo SDM dal 2018, ampliando così l'offerta di servizi integrati per i clienti.",
       images: [
-        "https://via.placeholder.com/600x400?text=Chiales+Tools+1", 
-        "https://via.placeholder.com/600x400?text=Chiales+Tools+2", 
-        "https://via.placeholder.com/600x400?text=Chiales+Tools+3", 
-        "https://via.placeholder.com/600x400?text=Chiales+Tools+4", 
-        "https://via.placeholder.com/600x400?text=Chiales+Tools+5"
+        // Updated with the newly provided images
+        "/lovable-uploads/2de9db87-52bf-4a63-9f9f-c690250a7f18.png", // Cubitr equipment with grinding wheels
+        "/lovable-uploads/98de8773-4fc3-4087-a687-d569f2a0d42e.png", // Workshop with 3M products and workbench
+        "/lovable-uploads/ab6f5121-0d22-441a-9145-2494e8c3d7b5.png", // Panoramic view of workshop with equipment
+        "/lovable-uploads/98de8773-4fc3-4087-a687-d569f2a0d42e.png", // Additional view of the workshop area
+        "/lovable-uploads/2de9db87-52bf-4a63-9f9f-c690250a7f18.png"  // Another view of the Cubitr equipment
       ]
     }
   ];
