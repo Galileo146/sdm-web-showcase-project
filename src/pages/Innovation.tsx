@@ -5,7 +5,6 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useState, useCallback, useEffect } from "react";
-import { CircleDot } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Hero from "../components/Hero";
 import InterestSection from "../components/InterestSection";
@@ -33,22 +32,11 @@ const Innovation = () => {
     description: "SYSTEM CERTIFIED"
   }];
   
-  const innovations = [{
-    image: "/lovable-uploads/8ead2349-d6b5-4a0e-a410-12bb902792a3.png",
-    title: "NUOVE VASCHE TRATTAMENTI SUPERFICIALI",
-    tag: "Attiva da Maggio 2025",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare."
-  }, {
-    image: "/lovable-uploads/fb8b76fb-1087-4a61-9acf-9886861c8b6b.png",
-    title: "NUOVI SISTEMI DI CONTROLLO",
-    tag: "Dal Gennaio 2025",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare."
-  }, {
-    image: "/lovable-uploads/8ead2349-d6b5-4a0e-a410-12bb902792a3.png",
-    title: "TECNOLOGIE AVANZATE",
-    tag: "In sviluppo",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare."
-  }];
+  // Use multiple images for a single innovation instead of multiple innovations
+  const innovationImages = [
+    "/lovable-uploads/8ead2349-d6b5-4a0e-a410-12bb902792a3.png",
+    "/lovable-uploads/fb8b76fb-1087-4a61-9acf-9886861c8b6b.png"
+  ];
   
   const [api, setApi] = useState(null);
   const [current, setCurrent] = useState(0);
@@ -115,7 +103,7 @@ const Innovation = () => {
         </div>
       </section>
 
-      {/* Innovations Section */}
+      {/* Innovations Section - Updated to a single innovation with image carousel */}
       <section className="py-16 bg-gray-100">
         <div className="container-wide">
           <div className="flex flex-col md:flex-row mb-12">
@@ -137,84 +125,90 @@ const Innovation = () => {
             </div>
           </div>
 
-          <div className="relative">
-            <Carousel 
-              className="w-full"
-              setApi={setApi}
-              opts={{
-                loop: true,
-                align: "start",
-              }}
-            >
-              <CarouselContent>
-                {innovations.map((item, index) => (
-                  <CarouselItem key={index} className="w-full">
-                    <Card className="border-0 shadow-lg overflow-hidden">
-                      <CardContent className="p-0">
-                        <div className="flex flex-col md:flex-row min-h-[480px]">
-                          {/* Image container - left side (55%) */}
-                          <div className="md:w-[55%] relative">
+          {/* Single fixed card with image gallery on left side */}
+          <Card className="border-0 shadow-lg overflow-hidden">
+            <CardContent className="p-0">
+              <div className="flex flex-col md:flex-row h-[600px]">
+                {/* Image gallery container - left side (55%) */}
+                <div className="md:w-[55%] relative h-full">
+                  <Carousel 
+                    className="w-full h-full"
+                    setApi={setApi}
+                    opts={{
+                      loop: true,
+                      align: "center",
+                    }}
+                  >
+                    <CarouselContent className="h-full">
+                      {innovationImages.map((image, index) => (
+                        <CarouselItem key={index} className="h-full">
+                          <div className="h-full">
                             <img 
-                              src={item.image} 
-                              alt={item.title} 
+                              src={image} 
+                              alt={`Innovation image ${index + 1}`} 
                               className="w-full h-full object-cover rounded-[24px]" 
                             />
-                            
-                            {/* Navigation arrows overlay on image */}
-                            <div className="absolute inset-y-0 left-4 flex items-center">
-                              <CarouselPrevious 
-                                className="relative h-10 w-10 rounded-full bg-white/70 hover:bg-white border-0"
-                              />
-                            </div>
-                            <div className="absolute inset-y-0 right-4 flex items-center">
-                              <CarouselNext 
-                                className="relative h-10 w-10 rounded-full bg-white/70 hover:bg-white border-0"
-                              />
-                            </div>
                           </div>
-                          
-                          {/* Content container - right side (45%) */}
-                          <div className="md:w-[45%] p-6 md:p-10 flex flex-col justify-center">
-                            <Badge variant="outline" className="mb-4 bg-black text-white py-1 px-3 text-xs uppercase rounded-xl self-start">
-                              {item.tag}
-                            </Badge>
-                            
-                            <h3 className="text-2xl md:text-3xl font-bold mb-6 uppercase">{item.title}</h3>
-                            
-                            <p className="text-gray-700 leading-relaxed mb-8">{item.description}</p>
-                            
-                            <div className="mt-auto">
-                              <Button 
-                                variant="outline" 
-                                className="border-2 border-sdm-red text-sdm-red hover:bg-sdm-red/10 rounded-full px-8 uppercase"
-                              >
-                                Visita il sito web
-                              </Button>
-                            </div>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              
-              {/* Pagination dots below */}
-              <div className="flex justify-center gap-2 mt-6">
-                {innovations.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => api?.scrollTo(index)}
-                    className={cn(
-                      "p-0 w-3 h-3 rounded-full transition-all focus:outline-none",
-                      current === index ? "bg-sdm-red" : "bg-gray-300"
-                    )}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    
+                    {/* Navigation arrows overlay on image */}
+                    <div className="absolute inset-y-0 left-4 flex items-center">
+                      <CarouselPrevious 
+                        className="relative h-10 w-10 rounded-full bg-white/70 hover:bg-white border-0"
+                      />
+                    </div>
+                    <div className="absolute inset-y-0 right-4 flex items-center">
+                      <CarouselNext 
+                        className="relative h-10 w-10 rounded-full bg-white/70 hover:bg-white border-0"
+                      />
+                    </div>
+                    
+                    {/* Pagination dots below the image */}
+                    <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                      {innovationImages.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => api?.scrollTo(index)}
+                          className={cn(
+                            "p-0 w-3 h-3 rounded-full transition-all focus:outline-none",
+                            current === index ? "bg-sdm-red" : "bg-white"
+                          )}
+                          aria-label={`Go to slide ${index + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </Carousel>
+                </div>
+                
+                {/* Content container - right side (45%) */}
+                <div className="md:w-[45%] p-6 md:p-10 flex flex-col justify-center">
+                  <Badge variant="outline" className="mb-4 bg-black text-white py-1 px-3 text-xs uppercase rounded-xl self-start">
+                    In sviluppo
+                  </Badge>
+                  
+                  <h3 className="text-2xl md:text-3xl font-bold mb-6 uppercase">NUOVE TECNOLOGIE AVANZATE</h3>
+                  
+                  <p className="text-gray-700 leading-relaxed mb-8">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. 
+                    Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim 
+                    nisl non condimentum ornare. Duis quis bibendum leo. Integer dignissim nisl non 
+                    condimentum ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                  
+                  <div className="mt-auto">
+                    <Button 
+                      variant="outline" 
+                      className="border-2 border-sdm-red text-sdm-red hover:bg-sdm-red/10 rounded-full px-8 uppercase"
+                    >
+                      Visita il sito web
+                    </Button>
+                  </div>
+                </div>
               </div>
-            </Carousel>
-          </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
