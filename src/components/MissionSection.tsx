@@ -1,26 +1,29 @@
+
 import { Card, CardContent } from "@/components/ui/card";
+
 const MissionSection = () => {
   const stats = [{
-    icon: "/lovable-uploads/68833927-394a-4229-8a44-5bf2d1181413.png",
+    icon: "/lovable-uploads/147274b9-f1e0-4d73-941f-cebda32ae82b.png", // Changed to R&D icon
     value: "4",
     label: "SEDI",
     description: "In Italia e Polonia per servire il mercato europeo"
   }, {
-    icon: "/lovable-uploads/6f2edb7c-0f60-4590-84f9-796b71b6fd01.png",
+    icon: "/lovable-uploads/f74cffcd-4230-4fc7-ab90-06ef1faad198.png", // Changed to SQM icon
     value: "+100",
     label: "DIPENDENTI",
     description: "Professionisti qualificati nelle diverse divisioni"
   }, {
-    icon: "/lovable-uploads/f74cffcd-4230-4fc7-ab90-06ef1faad198.png",
+    icon: "/lovable-uploads/68833927-394a-4229-8a44-5bf2d1181413.png", // Changed to SEDI icon
     value: "7000",
     label: "SQM",
     description: "Di superficie produttiva tra le varie sedi"
   }, {
-    icon: "/lovable-uploads/147274b9-f1e0-4d73-941f-cebda32ae82b.png",
+    icon: "/lovable-uploads/6f2edb7c-0f60-4590-84f9-796b71b6fd01.png", // Changed to DIPENDENTI icon
     value: "5%",
     label: "R&D",
     description: "Del fatturato investito in ricerca e sviluppo"
   }];
+
   return <section className="py-12 bg-white">
       <div className="container-wide">
         {/* Mission Title and Text Section */}
@@ -67,4 +70,5 @@ const MissionSection = () => {
       </div>
     </section>;
 };
+
 export default MissionSection;
