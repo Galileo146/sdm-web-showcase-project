@@ -148,7 +148,8 @@ const TimelineSection = ({ title, subtitle }: TimelineSectionProps) => {
         </div>
       </div>
       
-      <style>{`
+      <style>
+        {`
         .story-card {
           height: 450px;
           display: flex;
@@ -192,7 +193,8 @@ const TimelineSection = ({ title, subtitle }: TimelineSectionProps) => {
             width: 100%;
           }
         }
-      `}</style>
+        `}
+      </style>
     </section>
   );
 };
