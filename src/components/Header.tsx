@@ -72,7 +72,7 @@ const Header = () => {
           {/* Logo (centered) */}
           <Link to="/" className="flex items-center justify-center">
             <img 
-              src="public/lovable-uploads/c9aca676-dbe8-4863-8b29-105461861b9f.png" 
+              src="/lovable-uploads/72be639c-a35b-4b78-a0bd-9eadcc9e6299.png" 
               alt="SDM Logo" 
               className="h-12"
             />
