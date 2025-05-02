@@ -1,3 +1,4 @@
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -61,9 +62,12 @@ const Innovation = () => {
               </div>
             </div>
             <div className="md:w-2/3">
-              <p className="text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare.
-              </p>
+              <div className="flex">
+                <div className="min-h-full w-1 bg-sdm-red mr-4 hidden md:block"></div>
+                <p className="text-gray-700">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -103,9 +107,12 @@ const Innovation = () => {
               </div>
             </div>
             <div className="md:w-2/3">
-              <p className="text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare.
-              </p>
+              <div className="flex">
+                <div className="min-h-full w-1 bg-sdm-red mr-4 hidden md:block"></div>
+                <p className="text-gray-700">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare.
+                </p>
+              </div>
             </div>
           </div>
 
