@@ -1,3 +1,4 @@
+
 import { ReactNode } from "react";
 interface HeroProps {
   backgroundImage?: string;
@@ -23,7 +24,7 @@ const Hero = ({
         INNOVAZIONE{titleParts[1] || ""}
       </>;
   }
-  return <div className="hero min-h-screen w-full relative" style={backgroundImage ? {
+  return <div className="hero min-h-auto h-[70vh] w-full relative" style={backgroundImage ? {
     backgroundImage: `url(${backgroundImage})`
   } : undefined}>
       {youtubeVideoId && <div className="absolute inset-0 overflow-hidden w-full h-full">
