@@ -8,6 +8,7 @@ interface HeroProps {
   subtitle?: string;
   preTitle?: string;
   height?: string;
+  centerTitle?: boolean;
 }
 
 const Hero = ({
@@ -16,7 +17,8 @@ const Hero = ({
   title,
   subtitle,
   preTitle,
-  height = "70vh"
+  height = "70vh",
+  centerTitle = false
 }: HeroProps) => {
   // Se il titolo è una stringa e contiene "innovazione", dividiamolo in due righe
   let formattedTitle = title;
@@ -49,11 +51,13 @@ const Hero = ({
       {/* Aggiunto overlay scuro per migliorare la leggibilità del testo */}
       <div className="absolute inset-0 bg-black/30"></div>
       
-      {/* Posizionamento assoluto del testo in basso a sinistra */}
-      <div className="absolute inset-0 flex items-center justify-start px-8 md:px-16 z-10">
-        <div className="max-w-2xl">
+      {/* Posizionamento del testo centrato o a sinistra in base alla prop */}
+      <div className={`absolute inset-0 flex items-center ${centerTitle ? 'justify-center' : 'justify-start px-8 md:px-16'} z-10`}>
+        <div className={`${centerTitle ? 'text-center' : 'max-w-2xl'}`}>
           {preTitle && <p className="text-xl md:text-2xl font-medium mb-2 text-white">{preTitle}</p>}
-          {typeof formattedTitle === "string" ? <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">{formattedTitle}</h1> : <h1 className="text-4xl md:text-5xl font-bold text-white lg:text-5xl">{formattedTitle}</h1>}
+          {typeof formattedTitle === "string" ? 
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">{formattedTitle}</h1> : 
+            <h1 className="text-4xl md:text-5xl font-bold text-white lg:text-5xl">{formattedTitle}</h1>}
           {subtitle && <p className="mt-4 text-lg md:text-xl text-white">{subtitle}</p>}
         </div>
       </div>
