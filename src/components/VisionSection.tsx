@@ -18,9 +18,7 @@ const VisionSection = () => {
               La visione di SDM Group è quella di diventare il partner preferito per le soluzioni di ingegneria e produzione nei settori aerospaziali e automobilistica, attraverso l'innovazione continua e l'eccellenza operativa. 
               Puntiamo a creare valore sostenibile per i nostri clienti, dipendenti e la comunità, mantenendo i più alti standard di qualità e responsabilità ambientale.
             </p>
-            <p className="text-gray-700 leading-relaxed mt-4">
-              Il nostro obiettivo è costruire un futuro in cui tecnologia e sostenibilità si uniscono per creare soluzioni che migliorano la vita delle persone e rispettano l'ambiente.
-            </p>
+            
           </div>
         </div>
 
