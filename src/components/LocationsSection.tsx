@@ -24,9 +24,9 @@ const CompanyCard = ({
 const LocationsSection = () => {
   const companies = [
     {
-      name: "SDM POLSKA",
-      logo: "/lovable-uploads/0c02558d-38cd-4428-b403-7cf3fcb2d4fb.png",
-      websiteUrl: "https://sdm-polska.pl"
+      name: "SDM TORINO",
+      logo: "/lovable-uploads/0c02558d-38cd-4428-b403-7cf3fcb2d4fb.png", // Swapped with SDM Polska logo
+      websiteUrl: "https://www.sdmsrl.it"
     },
     {
       name: "SDM RIVOLI",
@@ -34,9 +34,9 @@ const LocationsSection = () => {
       websiteUrl: "https://www.sdmsrl.it"
     },
     {
-      name: "SDM TORINO",
-      logo: "/lovable-uploads/3450de51-9bbe-4a52-b147-406028ba7456.png",
-      websiteUrl: "https://www.sdmsrl.it"
+      name: "SDM POLSKA",
+      logo: "/lovable-uploads/3450de51-9bbe-4a52-b147-406028ba7456.png", // Swapped with SDM Torino logo
+      websiteUrl: "https://sdm-polska.pl"
     },
     {
       name: "CHIALES TOOLS",
@@ -48,7 +48,7 @@ const LocationsSection = () => {
   return <section className="py-8">
       <div className="container-wide">
         {/* World Map Image with reduced vertical spacing */}
-        <div className="mb-8">
+        <div className="mb-4">
           <img src="/lovable-uploads/db39e129-cfbe-4d72-bee6-15a905af8f49.png" alt="SDM Group locations on world map" className="w-full object-contain" />
         </div>
         
