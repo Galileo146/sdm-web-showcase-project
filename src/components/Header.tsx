@@ -93,7 +93,7 @@ const Header = () => {
               NEWS
             </Link>
             <Link 
-              to="#contattaci" 
+              to="/contatti" 
               className="border border-sdm-red text-white px-5 py-2 rounded flex items-center hover:border-red-400 transition-colors"
             >
               CONTATTACI
@@ -103,7 +103,7 @@ const Header = () => {
           
           {/* Placeholder for mobile */}
           <div className="md:hidden">
-            <Link to="#contattaci" className="text-white border border-sdm-red px-3 py-1 rounded text-sm flex items-center">
+            <Link to="/contatti" className="text-white border border-sdm-red px-3 py-1 rounded text-sm flex items-center">
               CONTATTACI
               <ArrowRight size={12} className="ml-1 text-sdm-red" />
             </Link>

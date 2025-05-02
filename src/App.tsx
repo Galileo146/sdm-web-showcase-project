@@ -11,6 +11,7 @@ import Innovation from "./pages/Innovation";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 import AboutUs from "./pages/AboutUs";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="innovazione" element={<Innovation />} />
             <Route path="innovazione-e-qualita" element={<Innovation />} />
             <Route path="blog" element={<Blog />} />
+            <Route path="contatti" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
