@@ -1,4 +1,3 @@
-
 import Hero from "../components/Hero";
 import NewsCard from "../components/NewsCard";
 import InterestSection from "../components/InterestSection";
@@ -6,7 +5,6 @@ import { Separator } from "@/components/ui/separator";
 import LocationsSection from "../components/LocationsSection";
 import CompanySection from "../components/CompanySection";
 import LogoSlider from "../components/LogoSlider";
-
 const Home = () => {
   const newsItems = [{
     image: "/lovable-uploads/a21ca549-71a7-47da-8f27-0b3723c813e9.png",
@@ -27,7 +25,6 @@ const Home = () => {
     excerpt: "SDM Polska celebra due anni di attività con risultati eccellenti. La sede di Lublin continua a crescere, assumendo nuovo personale specializzato e ampliando il proprio portfolio clienti...",
     link: "/blog/news-3"
   }];
-  
   return <div>
       {/* Hero Section */}
       <Hero youtubeVideoId="eqlEDkywdCI" preTitle="SDM GROUP" title="DA 25 ANNI TECNOLOGIE ED INNOVAZIONE" />
@@ -70,7 +67,7 @@ const Home = () => {
       </section>
 
       {/* Clients Section */}
-      <section className="bg-gray-100 py-12">
+      <section className="py-12 bg-gray-300">
         <div className="container-wide">
           <h2 className="text-2xl font-bold text-center mb-8">I nostri clienti</h2>
           <LogoSlider className="mt-8" />
