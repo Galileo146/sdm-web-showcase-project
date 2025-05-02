@@ -28,7 +28,8 @@ const Home = () => {
       {/* Hero Section */}
       <Hero 
         youtubeVideoId="eqlEDkywdCI" 
-        title="Da 25 anni tecnologie ed innovazione" 
+        preTitle="SDM GROUP"
+        title="DA 25 ANNI TECNOLOGIE ED INNOVAZIONE"
       />
 
       {/* New section with title, red divider, and text */}
