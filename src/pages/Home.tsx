@@ -67,7 +67,7 @@ const Home = () => {
       </section>
 
       {/* Clients Section */}
-      <section className="py-12 bg-gray-300">
+      <section className="py-12 bg-zinc-800">
         <div className="container-wide">
           <h2 className="font-bold text-center mb-8 text-3xl">I NOSTRI CLIENTI</h2>
           <LogoSlider className="mt-8" />
