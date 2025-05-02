@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useCallback } from "react";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 
@@ -151,7 +152,7 @@ const TimelineSection = () => {
         </div>
       </div>
       
-      <style jsx="true">{`
+      <style>{`
         .story-card {
           height: 370px;
           display: flex;
