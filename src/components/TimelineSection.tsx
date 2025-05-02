@@ -1,7 +1,5 @@
-
 import { useState, useEffect, useCallback } from "react";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
-
 interface TimelineItemProps {
   year: string;
   title: string;
@@ -10,12 +8,10 @@ interface TimelineItemProps {
   hasCarousel?: boolean;
   carouselImages?: string[];
 }
-
 interface TimelineSectionProps {
   title?: string;
   subtitle?: string;
 }
-
 const TimelineItem = ({
   year,
   title,
@@ -24,30 +20,23 @@ const TimelineItem = ({
   hasCarousel = false,
   carouselImages = []
 }: TimelineItemProps) => {
-  return (
-    <div className="story-card">
+  return <div className="story-card">
       {/* Left side: Image */}
       <div className="image-container">
-        {hasCarousel ? (
-          <Carousel opts={{
-            align: "center",
-            loop: true
-          }} className="w-full h-full">
+        {hasCarousel ? <Carousel opts={{
+        align: "center",
+        loop: true
+      }} className="w-full h-full">
             <CarouselContent className="h-full">
-              {carouselImages.map((img, idx) => (
-                <CarouselItem key={idx} className="h-full">
+              {carouselImages.map((img, idx) => <CarouselItem key={idx} className="h-full">
                   <div className="overflow-hidden h-full">
                     <img src={img} alt={`Timeline image ${idx + 1}`} className="w-full h-full object-cover" />
                   </div>
-                </CarouselItem>
-              ))}
+                </CarouselItem>)}
             </CarouselContent>
-          </Carousel>
-        ) : (
-          <div className="overflow-hidden h-full">
+          </Carousel> : <div className="overflow-hidden h-full">
             <img src={image} alt={title} className="w-full h-full object-cover" />
-          </div>
-        )}
+          </div>}
       </div>
       
       {/* Right side: Text content */}
@@ -62,67 +51,53 @@ const TimelineItem = ({
           {description}
         </p>
       </div>
-    </div>
-  );
+    </div>;
 };
-
-const TimelineSection = ({ title, subtitle }: TimelineSectionProps) => {
+const TimelineSection = ({
+  title,
+  subtitle
+}: TimelineSectionProps) => {
   // Timeline data
-  const timelineItems = [
-    {
-      year: "2023",
-      title: "Espansione nei mercati dell'Est Europa",
-      description: "Apertura della sede polacca SDM Polska a Lublin, strategicamente posizionata per servire i mercati dell'Europa orientale e consolidare la presenza internazionale del gruppo.",
-      image: "/lovable-uploads/6f2edb7c-0f60-4590-84f9-796b71b6fd01.png",
-    },
-    {
-      year: "2015",
-      title: "Investimenti tecnologici avanzati",
-      description: "Integrazione di sistemi di produzione di ultima generazione e implementazione di processi Industry 4.0 per migliorare l'efficienza produttiva e garantire i massimi standard di qualità.",
-      image: "/lovable-uploads/db39e129-cfbe-4d72-bee6-15a905af8f49.png",
-      hasCarousel: true,
-      carouselImages: [
-        "/lovable-uploads/db39e129-cfbe-4d72-bee6-15a905af8f49.png",
-        "/lovable-uploads/6f2edb7c-0f60-4590-84f9-796b71b6fd01.png",
-        "/lovable-uploads/eec1228f-68ee-49c9-997f-d9d0c12f1fbf.png"
-      ]
-    },
-    {
-      year: "2009",
-      title: "Nasce SDM Meccanica di Precisione",
-      description: "Fondazione dell'azienda con l'obiettivo di fornire componenti di alta precisione per i settori automotive, aerospaziale e industriale, con un focus sulla qualità e l'innovazione.",
-      image: "/lovable-uploads/eec1228f-68ee-49c9-997f-d9d0c12f1fbf.png",
-    }
-  ];
-  
+  const timelineItems = [{
+    year: "2023",
+    title: "Espansione nei mercati dell'Est Europa",
+    description: "Apertura della sede polacca SDM Polska a Lublin, strategicamente posizionata per servire i mercati dell'Europa orientale e consolidare la presenza internazionale del gruppo.",
+    image: "/lovable-uploads/6f2edb7c-0f60-4590-84f9-796b71b6fd01.png"
+  }, {
+    year: "2015",
+    title: "Investimenti tecnologici avanzati",
+    description: "Integrazione di sistemi di produzione di ultima generazione e implementazione di processi Industry 4.0 per migliorare l'efficienza produttiva e garantire i massimi standard di qualità.",
+    image: "/lovable-uploads/db39e129-cfbe-4d72-bee6-15a905af8f49.png",
+    hasCarousel: true,
+    carouselImages: ["/lovable-uploads/db39e129-cfbe-4d72-bee6-15a905af8f49.png", "/lovable-uploads/6f2edb7c-0f60-4590-84f9-796b71b6fd01.png", "/lovable-uploads/eec1228f-68ee-49c9-997f-d9d0c12f1fbf.png"]
+  }, {
+    year: "2009",
+    title: "Nasce SDM Meccanica di Precisione",
+    description: "Fondazione dell'azienda con l'obiettivo di fornire componenti di alta precisione per i settori automotive, aerospaziale e industriale, con un focus sulla qualità e l'innovazione.",
+    image: "/lovable-uploads/eec1228f-68ee-49c9-997f-d9d0c12f1fbf.png"
+  }];
+
   // Carousel state
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
-
   useEffect(() => {
     if (!api) {
       return;
     }
-
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
-
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
-
   const scrollPrev = useCallback(() => {
     api?.scrollPrev();
   }, [api]);
-
   const scrollNext = useCallback(() => {
     api?.scrollNext();
   }, [api]);
-
-  return (
-    <section className="section-padding bg-gray-50">
+  return <section className="section-padding bg-slate-50">
       <div className="container-wide">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -134,17 +109,7 @@ const TimelineSection = ({ title, subtitle }: TimelineSectionProps) => {
         
         {/* Timeline Items */}
         <div className="space-y-8">
-          {timelineItems.map((item, index) => (
-            <TimelineItem
-              key={index}
-              year={item.year}
-              title={item.title}
-              description={item.description}
-              image={item.image}
-              hasCarousel={item.hasCarousel}
-              carouselImages={item.carouselImages}
-            />
-          ))}
+          {timelineItems.map((item, index) => <TimelineItem key={index} year={item.year} title={item.title} description={item.description} image={item.image} hasCarousel={item.hasCarousel} carouselImages={item.carouselImages} />)}
         </div>
       </div>
       
@@ -195,8 +160,6 @@ const TimelineSection = ({ title, subtitle }: TimelineSectionProps) => {
         }
         `}
       </style>
-    </section>
-  );
+    </section>;
 };
-
 export default TimelineSection;
