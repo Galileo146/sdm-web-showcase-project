@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Globe, ArrowRight } from "lucide-react";
@@ -21,9 +20,16 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 w-full z-50" style={{ 
-      background: "linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.65))"
-    }}>
+    <header 
+      className="w-full z-[999]" 
+      style={{ 
+        position: "absolute", // Changed from sticky to absolute
+        top: 0,
+        left: 0,
+        right: 0,
+        background: "linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.65))"
+      }}
+    >
       <div className="container-wide py-4">
         <div className="flex items-center justify-between">
           {/* Mobile menu button */}
