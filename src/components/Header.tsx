@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 w-full z-50" style={{ 
+    <header className="fixed top-0 w-full z-50" style={{ 
       background: "linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.65))"
     }}>
       <div className="container-wide py-4">

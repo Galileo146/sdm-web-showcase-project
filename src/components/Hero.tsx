@@ -7,7 +7,7 @@ interface HeroProps {
   title: ReactNode;
   subtitle?: string;
   preTitle?: string;
-  height?: string; // Aggiungiamo la proprietà height opzionale
+  height?: string;
 }
 
 const Hero = ({
@@ -16,7 +16,7 @@ const Hero = ({
   title,
   subtitle,
   preTitle,
-  height = "70vh" // Valore predefinito mantenuto per compatibilità con altre pagine
+  height = "70vh"
 }: HeroProps) => {
   // Se il titolo è una stringa e contiene "innovazione", dividiamolo in due righe
   let formattedTitle = title;
@@ -30,10 +30,12 @@ const Hero = ({
   }
   
   return <div 
-    className="hero relative w-full" 
+    className="hero relative w-full mt-0" 
     style={{
       backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
       height: height,
+      objectFit: "cover",
+      width: "100%",
     }}
   >
       {youtubeVideoId && <div className="absolute inset-0 overflow-hidden w-full h-full">
@@ -43,6 +45,10 @@ const Hero = ({
             <div className="absolute inset-0 bg-black/40 z-[1]"></div>
           </div>
         </div>}
+      
+      {/* Aggiunto overlay scuro per migliorare la leggibilità del testo */}
+      <div className="absolute inset-0 bg-black/30"></div>
+      
       {/* Posizionamento assoluto del testo in basso a sinistra */}
       <div className="absolute inset-0 flex items-center justify-start px-8 md:px-16 z-10">
         <div className="max-w-2xl">
