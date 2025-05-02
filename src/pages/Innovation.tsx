@@ -1,4 +1,3 @@
-
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -6,7 +5,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import Hero from "../components/Hero";
 import InterestSection from "../components/InterestSection";
-
 const Innovation = () => {
   const certifications = [{
     logo: "/lovable-uploads/d660197a-3274-41b5-8867-d0f1bc5e09d5.png",
@@ -55,7 +53,7 @@ const Innovation = () => {
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/3 mb-6 md:mb-0 pr-0 md:pr-8 relative">
               <div className="flex">
-                <div className="min-h-full w-1 bg-sdm-red mr-4"></div>
+                <div className="min-h-full w-0 bg-sdm-red mr-4"></div>
                 <h2 className="text-3xl md:text-4xl font-bold">
                   LE NOSTRE<br />CERTIFICAZIONI
                 </h2>
