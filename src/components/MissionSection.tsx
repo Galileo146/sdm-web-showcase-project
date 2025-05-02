@@ -1,6 +1,4 @@
-
 import { Building2, Users2, MapPin, LineChart } from "lucide-react";
-
 const MissionSection = () => {
   const stats = [{
     icon: <Building2 className="h-7 w-7 text-sdm-red" />,
@@ -24,7 +22,8 @@ const MissionSection = () => {
         {/* Mission Title and Text Section */}
         <div className="flex flex-col md:flex-row mb-16">
           <div className="md:w-1/3 mb-6 md:mb-0">
-            <h2 className="text-3xl font-bold">LA NOSTRA MISSION</h2>
+            <h2 className="font-bold text-3xl">LA NOSTRA 
+MISSION</h2>
           </div>
           
           <div className="md:w-2/3 relative pl-6 md:pl-12">
@@ -63,5 +62,4 @@ const MissionSection = () => {
       </div>
     </section>;
 };
-
 export default MissionSection;
