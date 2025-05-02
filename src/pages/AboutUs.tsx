@@ -11,7 +11,7 @@ const AboutUs = () => {
     <div>
       {/* Hero Section */}
       <Hero 
-        backgroundImage="/lovable-uploads/9409e7b2-8adf-4abe-8fba-1dd665c97c7f.png"
+        backgroundImage="/lovable-uploads/f054b80f-d705-4e7d-b98b-de555dfe7af7.png"
         title="CHI SIAMO"
       />
 
