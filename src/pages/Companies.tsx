@@ -13,11 +13,12 @@ const Companies = () => {
       logo: "/lovable-uploads/988aab65-f764-48d2-9665-c95ef2e0b400.png",
       description: "Con sede principale a Torino, SDM rappresenta il cuore operativo del gruppo. Lo stabilimento torinese è specializzato nella produzione di componenti ad alta precisione per i settori automotive e aerospaziale, con particolare focus su soluzioni innovative e sostenibili. La nostra sede di Torino integra tecnologie di ultima generazione e processi di produzione all'avanguardia.",
       images: [
-        "https://via.placeholder.com/600x400?text=SDM+Torino+1",
-        "https://via.placeholder.com/600x400?text=SDM+Torino+2",
-        "https://via.placeholder.com/600x400?text=SDM+Torino+3",
-        "https://via.placeholder.com/600x400?text=SDM+Torino+4",
-        "https://via.placeholder.com/600x400?text=SDM+Torino+5"
+        "/lovable-uploads/e0e7d03a-71c6-4e47-aa98-4559b1c0c68d.png", // Elicottero
+        "/lovable-uploads/4a711b9a-b8b3-464e-b98b-59c1ba979ffc.png", // Area 1 e 2
+        "/lovable-uploads/b064a197-d842-4067-bc40-a05ff9f4409d.png", // Corridoio stabilimento
+        "/lovable-uploads/e64e62ba-034b-4fa5-a3a5-5ce97ec8cbc5.png", // Area stabilimento
+        "/lovable-uploads/7058536d-2aef-48f4-a986-cc9e1d68e2b4.png", // Logo SDM sul muro
+        "/lovable-uploads/1b4f7a80-c0c2-4290-8e84-990113fef5f5.png"  // Area produzione con logo
       ]
     },
     {
