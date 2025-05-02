@@ -1,16 +1,49 @@
-import { useState, useEffect } from "react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+
+import { useState, useEffect, useCallback } from "react";
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselNext, 
+  CarouselPrevious,
+  type CarouselApi
+} from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+
 const VisionSection = () => {
-  const images = ["/lovable-uploads/72be639c-a35b-4b78-a0bd-9eadcc9e6299.png", "/lovable-uploads/9409e7b2-8adf-4abe-8fba-1dd665c97c7f.png", "/lovable-uploads/a21ca549-71a7-47da-8f27-0b3723c813e9.png", "/lovable-uploads/ab5578b5-dd1e-4b76-8bbe-7d5fde1fdb4c.png", "/lovable-uploads/6e07a2af-51dd-4640-919a-a612099091a3.png"];
-  return <section className="py-16 bg-gray-50">
+  const images = [
+    "/lovable-uploads/601770b6-d8bf-4c46-a346-2424892f2fa2.png",
+    "/lovable-uploads/f2d4595c-4e0c-48d8-b450-d2169599ab57.png", 
+    "/lovable-uploads/8821f0dd-5ff9-4682-8189-c35136f86ca7.png", 
+    "/lovable-uploads/218ef476-6c90-486a-800d-2b10c26f6fb4.png", 
+    "/lovable-uploads/121f3c66-9407-464d-9e7d-e88d6a06b4a3.png",
+    "/lovable-uploads/35c28c7b-c407-43d8-b274-0b9e577269a9.png"
+  ];
+  
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+    api.on("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api, onSelect]);
+
+  return (
+    <section className="py-16 bg-gray-50">
       <div className="container-wide">
         {/* Vision Title and Text Section */}
         <div className="flex flex-col md:flex-row mb-16">
           <div className="md:w-1/3 mb-6 md:mb-0">
-            <div className="flex items-start">
-              
-              <h2 className="text-3xl font-bold">LA NOSTRA VISION</h2>
-            </div>
+            <h2 className="text-3xl font-bold">LA NOSTRA VISION</h2>
           </div>
           
           <div className="md:w-2/3 relative pl-6 md:pl-12">
@@ -22,28 +55,69 @@ const VisionSection = () => {
           </div>
         </div>
 
-        {/* Image Carousel */}
+        {/* Image Carousel with Focus Effect */}
         <div className="mt-10">
-          <Carousel opts={{
-          align: "start",
-          loop: true
-        }} className="w-full">
+          <Carousel 
+            opts={{
+              align: "center",
+              loop: true,
+            }} 
+            className="w-full"
+            setApi={setApi}
+          >
             <CarouselContent className="-ml-4">
-              {images.map((image, index) => <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
-                    <div className="overflow-hidden rounded-lg h-64">
-                      <img src={image} alt={`Vision image ${index + 1}`} className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-                    </div>
+              {images.map((image, index) => (
+                <CarouselItem 
+                  key={index} 
+                  className="pl-4 md:basis-1/3 lg:basis-1/3 transition-all duration-300"
+                >
+                  <div className={cn(
+                    "overflow-hidden rounded-[20px] transition-all duration-300",
+                    current === index 
+                      ? "h-[400px] scale-100 opacity-100" 
+                      : "h-[340px] scale-90 opacity-70"
+                  )}>
+                    <img 
+                      src={image} 
+                      alt={`Vision image ${index + 1}`} 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                </CarouselItem>)}
+                </CarouselItem>
+              ))}
             </CarouselContent>
-            <div className="flex justify-center mt-8">
-              <CarouselPrevious className="static transform-none mx-2" />
-              <CarouselNext className="static transform-none mx-2" />
+            
+            {/* Custom carousel navigation */}
+            <div className="flex justify-between items-center mt-6">
+              <CarouselPrevious 
+                className="static transform-none border-0 bg-transparent hover:bg-gray-100 h-10 w-10 rounded-full shadow-md"
+              />
+              
+              {/* Dot indicators */}
+              <div className="flex justify-center gap-2">
+                {images.map((_, index) => (
+                  <Button
+                    key={index}
+                    variant="ghost"
+                    size="icon"
+                    className={cn(
+                      "w-3 h-3 p-0 rounded-full",
+                      current === index ? "bg-sdm-red" : "bg-gray-300"
+                    )}
+                    onClick={() => api?.scrollTo(index)}
+                  />
+                ))}
+              </div>
+              
+              <CarouselNext 
+                className="static transform-none border-0 bg-transparent hover:bg-gray-100 h-10 w-10 rounded-full shadow-md"
+              />
             </div>
           </Carousel>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default VisionSection;
