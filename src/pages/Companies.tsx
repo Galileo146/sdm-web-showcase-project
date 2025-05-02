@@ -5,12 +5,12 @@ import CompanyCard from "../components/CompanyCard";
 import { Separator } from "@/components/ui/separator";
 
 const Companies = () => {
-  // Company data
+  // Company data with correct companies and logos
   const companies = [
     {
       id: 1,
       name: "SDM TORINO",
-      logo: "https://via.placeholder.com/120x40?text=SDM+Torino",
+      logo: "/lovable-uploads/988aab65-f764-48d2-9665-c95ef2e0b400.png",
       description: "Con sede principale a Torino, SDM rappresenta il cuore operativo del gruppo. Lo stabilimento torinese è specializzato nella produzione di componenti ad alta precisione per i settori automotive e aerospaziale, con particolare focus su soluzioni innovative e sostenibili. La nostra sede di Torino integra tecnologie di ultima generazione e processi di produzione all'avanguardia.",
       images: [
         "https://via.placeholder.com/600x400?text=SDM+Torino+1",
@@ -23,7 +23,7 @@ const Companies = () => {
     {
       id: 2,
       name: "SDM RIVOLI",
-      logo: "https://via.placeholder.com/120x40?text=SDM+Rivoli",
+      logo: "/lovable-uploads/b14f24ce-aefb-4334-a544-188b4ed08258.png",
       description: "Situata nell'area industriale di Rivoli, questa sede è specializzata nella lavorazione di materiali avanzati e componenti di precisione per il settore industriale. Con un focus particolare sull'innovazione tecnologica, SDM Rivoli ospita anche un centro di ricerca e sviluppo dedicato all'implementazione di nuove tecnologie produttive e alla sperimentazione di materiali innovativi.",
       images: [
         "https://via.placeholder.com/600x400?text=SDM+Rivoli+1",
@@ -35,21 +35,8 @@ const Companies = () => {
     },
     {
       id: 3,
-      name: "SDM ROMA",
-      logo: "https://via.placeholder.com/120x40?text=SDM+Roma",
-      description: "La sede romana di SDM si concentra principalmente sui settori difesa e aerospazio, collaborando direttamente con importanti clienti nazionali e internazionali. Questo stabilimento è dotato di attrezzature specializzate per la produzione di componenti critiche che richiedono elevati standard di sicurezza e affidabilità, certificate secondo le più rigide normative del settore.",
-      images: [
-        "https://via.placeholder.com/600x400?text=SDM+Roma+1",
-        "https://via.placeholder.com/600x400?text=SDM+Roma+2",
-        "https://via.placeholder.com/600x400?text=SDM+Roma+3",
-        "https://via.placeholder.com/600x400?text=SDM+Roma+4",
-        "https://via.placeholder.com/600x400?text=SDM+Roma+5"
-      ]
-    },
-    {
-      id: 4,
       name: "SDM POLSKA",
-      logo: "https://via.placeholder.com/120x40?text=SDM+Polska",
+      logo: "/lovable-uploads/28721224-14d7-4c33-b02e-1817cdef47a6.png",
       description: "La sede polacca, inaugurata nel 2023 a Lublino, rappresenta l'espansione internazionale più recente del gruppo SDM. Questo stabilimento serve i mercati dell'Europa dell'Est, offrendo soluzioni integrate per l'industria automobilistica e meccanica. SDM Polska combina l'esperienza italiana con le competenze locali, creando un ponte strategico per lo sviluppo del business nell'Europa orientale.",
       images: [
         "https://via.placeholder.com/600x400?text=SDM+Polska+1",
@@ -57,6 +44,19 @@ const Companies = () => {
         "https://via.placeholder.com/600x400?text=SDM+Polska+3",
         "https://via.placeholder.com/600x400?text=SDM+Polska+4",
         "https://via.placeholder.com/600x400?text=SDM+Polska+5"
+      ]
+    },
+    {
+      id: 4,
+      name: "CHIALES TOOLS",
+      logo: "/lovable-uploads/4d73b204-8c56-40be-bd09-eed7dcdf9e9f.png",
+      description: "Chiales Tools è una società specializzata nella produzione di utensili e attrezzature di alta precisione per l'industria manifatturiera. Con un'esperienza consolidata nel settore metalmeccanico, Chiales Tools offre soluzioni personalizzate per lavorazioni complesse, garantendo la massima qualità e precisione. L'azienda fa parte del gruppo SDM dal 2018, ampliando così l'offerta di servizi integrati per i clienti.",
+      images: [
+        "https://via.placeholder.com/600x400?text=Chiales+Tools+1",
+        "https://via.placeholder.com/600x400?text=Chiales+Tools+2",
+        "https://via.placeholder.com/600x400?text=Chiales+Tools+3",
+        "https://via.placeholder.com/600x400?text=Chiales+Tools+4",
+        "https://via.placeholder.com/600x400?text=Chiales+Tools+5"
       ]
     }
   ];
