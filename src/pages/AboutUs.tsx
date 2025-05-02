@@ -13,6 +13,7 @@ const AboutUs = () => {
       <Hero 
         backgroundImage="/lovable-uploads/f054b80f-d705-4e7d-b98b-de555dfe7af7.png"
         title="CHI SIAMO"
+        height="450px"
       />
 
       {/* Mission Section */}
