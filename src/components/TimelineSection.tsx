@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useCallback } from "react";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 
@@ -20,33 +19,33 @@ const TimelineItem = ({
   carouselImages = []
 }: TimelineItemProps) => {
   return (
-    <div className="card flex flex-col md:flex-row gap-10 md:gap-10 items-center p-6 rounded-xl bg-white shadow-[0px_6px_16px_rgba(0,0,0,0.05)]">
+    <div className="story-card">
       {/* Left side: Image */}
-      <div className="w-full md:w-1/2 order-1">
+      <div className="image-container">
         {hasCarousel ? (
           <Carousel opts={{
             align: "center",
             loop: true
-          }} className="w-full">
-            <CarouselContent>
+          }} className="w-full h-full">
+            <CarouselContent className="h-full">
               {carouselImages.map((img, idx) => (
-                <CarouselItem key={idx}>
-                  <div className="overflow-hidden rounded-lg">
-                    <img src={img} alt={`Timeline image ${idx + 1}`} className="w-full h-auto object-cover rounded-lg" />
+                <CarouselItem key={idx} className="h-full">
+                  <div className="overflow-hidden h-full">
+                    <img src={img} alt={`Timeline image ${idx + 1}`} className="w-full h-full object-cover" />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
           </Carousel>
         ) : (
-          <div className="overflow-hidden rounded-lg">
-            <img src={image} alt={title} className="w-full h-auto object-cover rounded-lg" />
+          <div className="overflow-hidden h-full">
+            <img src={image} alt={title} className="w-full h-full object-cover" />
           </div>
         )}
       </div>
       
       {/* Right side: Text content */}
-      <div className="w-full md:w-1/2 p-6 order-2">
+      <div className="content">
         <span className="year-tag inline-block bg-sdm-red text-white font-bold py-1.5 px-3 rounded-md text-base">
           {year}
         </span>
@@ -151,6 +150,52 @@ const TimelineSection = () => {
           ))}
         </div>
       </div>
+      
+      <style jsx="true">{`
+        .story-card {
+          height: 450px;
+          display: flex;
+          flex-direction: row;
+          align-items: stretch;
+          overflow: hidden;
+          border-radius: 12px;
+          background-color: #ffffff;
+          box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.05);
+        }
+        
+        .story-card .image-container {
+          height: 100%;
+          width: 50%;
+          overflow: hidden;
+          border-radius: 8px 0 0 8px;
+        }
+        
+        .story-card .content {
+          height: 100%;
+          width: 50%;
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        
+        @media (max-width: 768px) {
+          .story-card {
+            flex-direction: column;
+            height: auto;
+          }
+          
+          .story-card .image-container {
+            width: 100%;
+            height: 250px;
+            border-radius: 8px 8px 0 0;
+          }
+          
+          .story-card .content {
+            width: 100%;
+          }
+        }
+      `}</style>
     </section>
   );
 };
