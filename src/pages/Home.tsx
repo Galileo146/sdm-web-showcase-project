@@ -3,7 +3,6 @@ import NewsCard from "../components/NewsCard";
 import InterestSection from "../components/InterestSection";
 import { Separator } from "@/components/ui/separator";
 import LocationsSection from "../components/LocationsSection";
-
 const Home = () => {
   const newsItems = [{
     image: "https://via.placeholder.com/600x400?text=News+1",
@@ -24,7 +23,6 @@ const Home = () => {
     excerpt: "SDM Polska celebra due anni di attività con risultati eccellenti. La sede di Lublin continua a crescere, assumendo nuovo personale specializzato e ampliando il proprio portfolio clienti...",
     link: "/blog/news-3"
   }];
-  
   return <div>
       {/* Hero Section */}
       <Hero youtubeVideoId="eqlEDkywdCI" preTitle="SDM GROUP" title="DA 25 ANNI TECNOLOGIE ED INNOVAZIONE" />
@@ -37,7 +35,7 @@ const Home = () => {
           </div>
           
           <div className="hidden md:flex mx-6 items-stretch self-stretch">
-            <div className="w-4 bg-sdm-red h-full"></div>
+            <div className="w-1 bg-sdm-red h-full"></div>
           </div>
           
           <div className="md:w-2/3">
