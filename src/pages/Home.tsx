@@ -31,13 +31,13 @@ const Home = () => {
 
       {/* New section with title, red divider, and text */}
       <section className="py-12 container-wide">
-        <div className="flex flex-col md:flex-row items-start">
+        <div className="flex flex-col md:flex-row items-center md:items-start">
           <div className="md:w-1/3 mb-6 md:mb-0">
             <h2 className="text-4xl font-bold leading-tight md:text-3xl">TECNOLOGIA E INNOVAZIONE</h2>
           </div>
           
           <div className="hidden md:block mx-8">
-            <Separator orientation="vertical" className="h-full w-1 bg-sdm-red" />
+            <Separator orientation="vertical" className="h-full w-2 bg-sdm-red" />
           </div>
           
           <div className="md:w-2/3">
