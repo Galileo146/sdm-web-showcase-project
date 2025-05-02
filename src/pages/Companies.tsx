@@ -27,11 +27,12 @@ const Companies = () => {
       logo: "/lovable-uploads/b14f24ce-aefb-4334-a544-188b4ed08258.png",
       description: "Situata nell'area industriale di Rivoli, questa sede è specializzata nella lavorazione di materiali avanzati e componenti di precisione per il settore industriale. Con un focus particolare sull'innovazione tecnologica, SDM Rivoli ospita anche un centro di ricerca e sviluppo dedicato all'implementazione di nuove tecnologie produttive e alla sperimentazione di materiali innovativi.",
       images: [
-        "https://via.placeholder.com/600x400?text=SDM+Rivoli+1", 
-        "https://via.placeholder.com/600x400?text=SDM+Rivoli+2", 
-        "https://via.placeholder.com/600x400?text=SDM+Rivoli+3", 
-        "https://via.placeholder.com/600x400?text=SDM+Rivoli+4", 
-        "https://via.placeholder.com/600x400?text=SDM+Rivoli+5"
+        // Updated with the actual images
+        "/lovable-uploads/e145087b-9405-4dab-a4e3-1639632d3532.png", // Building exterior with blue door
+        "/lovable-uploads/680fead9-7428-4a83-89b5-e701b04084d3.png", // Building entrance with blue gate
+        "/lovable-uploads/4c4bd5ca-2e48-40cd-9194-4f4bd023948f.png", // 3D printer/manufacturing equipment
+        "/lovable-uploads/1c309a9a-894b-4350-a874-fa59d0f21112.png", // Large industrial machine
+        "/lovable-uploads/14698c82-fe36-4ee3-a836-cc7f507574cf.png"  // Production area with machinery
       ]
     },
     {
