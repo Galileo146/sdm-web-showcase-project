@@ -30,7 +30,7 @@ const Home = () => {
       <Hero youtubeVideoId="eqlEDkywdCI" preTitle="SDM GROUP" title="DA 25 ANNI TECNOLOGIE ED INNOVAZIONE" />
 
       {/* New section with title, red divider, and text */}
-      <section className="py-16 container-wide">
+      <section className="py-12 container-wide">
         <div className="flex flex-col md:flex-row items-start">
           <div className="md:w-1/3 mb-6 md:mb-0">
             <h2 className="text-4xl font-bold leading-tight md:text-3xl">TECNOLOGIA E INNOVAZIONE</h2>
@@ -50,7 +50,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Locations Section (Updated) */}
+      {/* Locations Section (Updated with reduced spacing) */}
       <LocationsSection />
 
       {/* Our Companies Section */}
