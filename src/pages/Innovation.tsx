@@ -1,4 +1,3 @@
-
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -77,9 +76,15 @@ const Innovation = () => {
               </div>)}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="flex flex-col md:flex-row gap-4 justify-center mt-12">
             <Button className="bg-sdm-red hover:bg-red-700 text-white px-8 py-2">
-              Vedi tutte le nostre certificazioni
+              Certificati SDM Torino
+            </Button>
+            <Button className="bg-sdm-red hover:bg-red-700 text-white px-8 py-2">
+              Certificati SDM Rivoli
+            </Button>
+            <Button className="bg-sdm-red hover:bg-red-700 text-white px-8 py-2">
+              Certificati SDM Polska
             </Button>
           </div>
         </div>
