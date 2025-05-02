@@ -1,7 +1,10 @@
+
 import Hero from "../components/Hero";
 import NewsCard from "../components/NewsCard";
 import InterestSection from "../components/InterestSection";
 import { Separator } from "@/components/ui/separator";
+import LocationsSection from "../components/LocationsSection";
+
 const Home = () => {
   const newsItems = [{
     image: "https://via.placeholder.com/600x400?text=News+1",
@@ -47,53 +50,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Technology and Innovation Section */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <h2 className="section-title">Tecnologia e Innovazione</h2>
-          <div className="mt-12 flex flex-col md:flex-row items-center gap-10">
-            <div className="md:w-1/2">
-              <div className="relative">
-                <img src="https://via.placeholder.com/800x600?text=Europe+Map" alt="Mappa Europa con sedi SDM" className="w-full rounded-lg" />
-                {/* Location markers */}
-                <div className="absolute top-[40%] left-[40%] h-4 w-4 bg-sdm-red rounded-full animate-pulse">
-                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-medium">Torino</span>
-                </div>
-                <div className="absolute top-[45%] left-[38%] h-4 w-4 bg-sdm-red rounded-full animate-pulse">
-                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-medium">Rivoli</span>
-                </div>
-                <div className="absolute top-[35%] left-[60%] h-4 w-4 bg-sdm-red rounded-full animate-pulse">
-                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-medium">Lublin</span>
-                </div>
-              </div>
-            </div>
-            <div className="md:w-1/2">
-              <h3 className="text-2xl font-bold mb-4">Le nostre sedi in Europa</h3>
-              <p className="text-gray-700 mb-6">
-                SDM Group è presente con diverse sedi strategiche in Italia e Polonia, garantendo una presenza capillare e un servizio efficiente ai nostri clienti in tutta Europa.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="border border-gray-200 rounded-lg p-6 hover:border-sdm-red transition-colors">
-                  <h4 className="font-bold mb-2">SDM Torino</h4>
-                  <p className="text-sm text-gray-600">Sede principale del gruppo, dedicata alla produzione di componenti di precisione.</p>
-                </div>
-                <div className="border border-gray-200 rounded-lg p-6 hover:border-sdm-red transition-colors">
-                  <h4 className="font-bold mb-2">SDM Rivoli</h4>
-                  <p className="text-sm text-gray-600">Centro specializzato nei processi speciali e trattamenti superficiali.</p>
-                </div>
-                <div className="border border-gray-200 rounded-lg p-6 hover:border-sdm-red transition-colors">
-                  <h4 className="font-bold mb-2">SDM Polska</h4>
-                  <p className="text-sm text-gray-600">Sede polacca dedicata al mercato dell'Europa orientale.</p>
-                </div>
-                <div className="border border-gray-200 rounded-lg p-6 hover:border-sdm-red transition-colors">
-                  <h4 className="font-bold mb-2">Chiales Tools</h4>
-                  <p className="text-sm text-gray-600">Divisione specializzata nella produzione di utensili di precisione.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Locations Section (Updated) */}
+      <LocationsSection />
 
       {/* Our Companies Section */}
       <section className="bg-gray-100 section-padding">
