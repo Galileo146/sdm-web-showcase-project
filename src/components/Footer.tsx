@@ -15,7 +15,7 @@ const Footer = () => {
             {/* Logo */}
             <div className="mb-6">
               <img 
-                src="/lovable-uploads/c9aca676-dbe8-4863-8b29-105461861b9f.png" 
+                src="/lovable-uploads/a637e3bd-3c07-44f2-9444-0a98589d4c9c.png" 
                 alt="SDM Group Logo" 
                 className="h-14"
               />
