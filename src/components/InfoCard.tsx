@@ -1,33 +1,35 @@
 
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 interface InfoCardProps {
   image: string;
   title: string;
-  description: string;
   link: string;
-  darkBg?: boolean;
 }
 
-const InfoCard = ({ image, title, description, link, darkBg = false }: InfoCardProps) => {
+const InfoCard = ({ image, title, link }: InfoCardProps) => {
   return (
     <Link 
       to={link}
-      className={`group block ${darkBg ? 'bg-gray-800' : 'bg-white'} shadow-md rounded-lg overflow-hidden card-hover`}
+      className="group block relative rounded-lg overflow-hidden h-[300px] transition-all duration-300 hover:scale-105 shadow-md"
     >
-      <div className="relative h-48 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
         <img 
           src={image} 
           alt={title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span className="text-white font-medium">Scopri di più</span>
-        </div>
       </div>
-      <div className="p-6">
-        <h3 className={`text-xl font-bold mb-2 ${darkBg ? 'text-white' : ''}`}>{title}</h3>
-        <p className={darkBg ? 'text-gray-300' : 'text-gray-600'}>{description}</p>
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+      
+      {/* Title and Arrow */}
+      <div className="absolute bottom-6 left-6 flex items-center space-x-2 text-white">
+        <h3 className="text-xl font-bold">{title}</h3>
+        <ArrowRight className="w-5 h-5" />
       </div>
     </Link>
   );

@@ -25,6 +25,7 @@ const App = () => (
             <Route path="chi-siamo" element={<Home />} /> {/* Temporarily using Home component */}
             <Route path="aziende" element={<Companies />} />
             <Route path="innovazione" element={<Innovation />} />
+            <Route path="innovazione-e-qualita" element={<Innovation />} />
             <Route path="blog" element={<Blog />} />
             <Route path="*" element={<NotFound />} />
           </Route>
