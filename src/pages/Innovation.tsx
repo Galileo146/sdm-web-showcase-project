@@ -1,4 +1,3 @@
-
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,28 +14,28 @@ import InterestSection from "../components/InterestSection";
 const Innovation = () => {
   const certifications = [
     {
-      logo: "https://via.placeholder.com/150x100?text=Nadcap",
-      title: "NADCAP NDT",
-      iso: "ISO 9001",
-      description: "NADCAP NONDESTRUCTIVE TESTING ACCREDITATION"
-    },
-    {
-      logo: "https://via.placeholder.com/150x100?text=Nadcap",
-      title: "NADCAP NDT",
-      iso: "ISO 9001",
-      description: "NADCAP NONDESTRUCTIVE TESTING ACCREDITATION"
-    },
-    {
-      logo: "https://via.placeholder.com/150x100?text=Kiwa",
+      logo: "/lovable-uploads/d660197a-3274-41b5-8867-d0f1bc5e09d5.png",
       title: "KIWA",
-      iso: "ISO 9001",
-      description: "NADCAP NONDESTRUCTIVE TESTING ACCREDITATION"
+      iso: "EN 9120:2018, AS9100D, JISQ 9100:2016, ISO 9001:2015",
+      description: ""
     },
     {
-      logo: "https://via.placeholder.com/150x100?text=MTCI",
-      title: "MTCI DIN ISO 45001-2018",
-      iso: "ISO 9001",
-      description: "NADCAP NONDESTRUCTIVE TESTING ACCREDITATION"
+      logo: "/lovable-uploads/19c2dcc1-48d3-448a-ac0a-13fb2f133c96.png",
+      title: "NADCAP",
+      iso: "NADCAP NDT",
+      description: "NON DESTRUCTIVE TESTING ACCREDITATION"
+    },
+    {
+      logo: "/lovable-uploads/e3fa59c0-f74a-48a5-b483-b72a5d4c6a2f.png",
+      title: "NADCAP",
+      iso: "NADCAP HT",
+      description: "HEAT TREATMENTS ACCREDITATION"
+    },
+    {
+      logo: "/lovable-uploads/03f3e236-1bf0-4d4b-893f-446944fdb70b.png",
+      title: "MTIC",
+      iso: "DIN ISO 14001-2015, DIN ISO 45001-2018",
+      description: "SYSTEM CERTIFIED"
     }
   ];
 
@@ -96,8 +95,8 @@ const Innovation = () => {
                   className="h-16 mb-4 object-contain"
                 />
                 <h3 className="font-bold text-xl mb-1">{cert.title}</h3>
-                <div className="text-sm text-gray-500 mb-2">{cert.iso}</div>
-                <p className="text-xs text-gray-700 mt-auto">{cert.description}</p>
+                <div className="text-sm text-gray-700 mb-2">{cert.iso}</div>
+                {cert.description && <p className="text-xs text-gray-700 mt-auto">{cert.description}</p>}
               </div>
             ))}
           </div>
