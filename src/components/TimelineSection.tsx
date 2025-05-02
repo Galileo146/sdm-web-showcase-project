@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useCallback } from "react";
 import {
   Carousel,
@@ -9,6 +8,7 @@ import {
   type CarouselApi
 } from "@/components/ui/carousel";
 import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
 interface TimelineItemProps {
   year: string;
@@ -145,12 +145,22 @@ const TimelineSection = () => {
   return (
     <section className="py-16">
       <div className="container-wide">
-        {/* Updated Timeline Title */}
-        <div className="flex items-start mb-16">
-          <div className="w-1 bg-sdm-red h-20 mr-4 mt-1"></div>
-          <div>
-            <h2 className="text-3xl font-bold">LA NOSTRA</h2>
-            <h2 className="text-3xl font-bold">STORIA</h2>
+        {/* Timeline Title with Description */}
+        <div className="flex flex-col md:flex-row mb-16 gap-10">
+          <div className="md:w-1/3 flex items-start">
+            <div className="w-1 bg-sdm-red h-20 mr-4 mt-1"></div>
+            <div>
+              <h2 className="text-3xl font-bold">LA NOSTRA</h2>
+              <h2 className="text-3xl font-bold">STORIA</h2>
+            </div>
+          </div>
+          
+          <div className="md:w-2/3 relative pl-6 md:pl-12">
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-sdm-red"></div>
+            <p className="text-gray-700 leading-relaxed">
+              La visione di SDM Group è quella di diventare il partner preferito per le soluzioni di ingegneria e produzione nei settori aerospaziali e automobilistica, attraverso l'innovazione continua e l'eccellenza operativa. 
+              Puntiamo a creare valore sostenibile per i nostri clienti, dipendenti e la comunità, mantenendo i più alti standard di qualità e responsabilità ambientale.
+            </p>
           </div>
         </div>
         
