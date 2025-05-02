@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useCallback } from "react";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 
@@ -47,7 +46,7 @@ const TimelineItem = ({
       
       {/* Right side: Text content */}
       <div className="content">
-        <span className="year-tag inline-block bg-sdm-red text-white font-bold py-1.5 px-3 rounded-md text-base">
+        <span className="year-tag">
           {year}
         </span>
         <h3 className="event-title text-xl font-semibold text-black mt-3">
@@ -152,7 +151,8 @@ const TimelineSection = () => {
         </div>
       </div>
       
-      <style>{`
+      <style>
+        {`
         .story-card {
           height: 370px;
           display: flex;
@@ -182,10 +182,14 @@ const TimelineSection = () => {
         
         .year-tag {
           display: inline-block;
+          background-color: #E30016;
+          color: white;
+          font-weight: bold;
           padding: 4px 10px;
+          border-radius: 4px;
           width: auto;
           min-width: unset;
-          border-radius: 4px;
+          font-size: 1rem;
         }
         
         @media (max-width: 768px) {
@@ -204,7 +208,8 @@ const TimelineSection = () => {
             width: 100%;
           }
         }
-      `}</style>
+        `}
+      </style>
     </section>
   );
 };
