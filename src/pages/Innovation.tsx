@@ -67,6 +67,7 @@ const Innovation = () => {
       <Hero 
         backgroundImage="/lovable-uploads/d2abc7f7-3e52-45f8-b48b-64603659a72d.png"
         title="INNOVAZIONE E QUALITÀ"
+        height="450px"
       />
 
       {/* Certifications Section */}
