@@ -38,6 +38,8 @@ const Hero = ({
       height: height,
       objectFit: "cover",
       width: "100%",
+      backgroundPosition: "center",
+      backgroundSize: "cover"
     }}
   >
       {youtubeVideoId && <div className="absolute inset-0 overflow-hidden w-full h-full">

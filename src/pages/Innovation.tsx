@@ -63,9 +63,9 @@ const Innovation = () => {
 
   return (
     <div>
-      {/* Hero Section */}
+      {/* Hero Section with the new image */}
       <Hero 
-        backgroundImage="/lovable-uploads/eec1228f-68ee-49c9-997f-d9d0c12f1fbf.png"
+        backgroundImage="/lovable-uploads/d2abc7f7-3e52-45f8-b48b-64603659a72d.png"
         title="INNOVAZIONE E QUALITÀ"
       />
 
