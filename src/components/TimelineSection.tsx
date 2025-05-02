@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -8,7 +8,7 @@ import {
   CarouselPrevious,
   type CarouselApi
 } from "@/components/ui/carousel";
-import { useEffect, useCallback } from "react";
+import { Badge } from "@/components/ui/badge";
 
 interface TimelineItemProps {
   year: string;
@@ -63,7 +63,7 @@ const TimelineItem = ({
             <img
               src={image}
               alt={title}
-              className="w-full h-auto object-cover"
+              className="w-full h-auto max-h-[400px] object-cover"
             />
           </div>
         )}
@@ -155,7 +155,6 @@ const TimelineSection = () => {
         <Carousel
           opts={{
             align: "center",
-            loop: true,
           }}
           className="w-full"
           setApi={setApi}
@@ -170,18 +169,29 @@ const TimelineSection = () => {
                   image={item.image}
                   hasCarousel={item.hasCarousel}
                   carouselImages={item.carouselImages}
-                  isLeft={item.isLeft}
+                  isLeft={index % 2 === 0} // Alterna il layout
                 />
               </CarouselItem>
             ))}
           </CarouselContent>
           
-          <div className="flex justify-between items-center mt-10">
+          {/* Navigazione con frecce ai lati */}
+          <div className="hidden absolute top-1/2 -translate-y-1/2 justify-between w-full px-4 md:flex">
             <CarouselPrevious 
-              className="static transform-none border-0 bg-transparent hover:bg-gray-100 h-10 w-10 rounded-full shadow-md"
+              className="relative left-[-40px] h-10 w-10 rounded-full shadow-md border-0 bg-white hover:bg-gray-100"
             />
             <CarouselNext 
-              className="static transform-none border-0 bg-transparent hover:bg-gray-100 h-10 w-10 rounded-full shadow-md"
+              className="relative right-[-40px] h-10 w-10 rounded-full shadow-md border-0 bg-white hover:bg-gray-100"
+            />
+          </div>
+          
+          {/* Controlli mobili */}
+          <div className="flex md:hidden justify-between items-center mt-8">
+            <CarouselPrevious 
+              className="static transform-none h-10 w-10 rounded-full shadow-md border-0 bg-white hover:bg-gray-100"
+            />
+            <CarouselNext 
+              className="static transform-none h-10 w-10 rounded-full shadow-md border-0 bg-white hover:bg-gray-100"
             />
           </div>
         </Carousel>
