@@ -36,8 +36,8 @@ const Home = () => {
             <h2 className="text-4xl font-bold leading-tight md:text-3xl">TECNOLOGIA E INNOVAZIONE</h2>
           </div>
           
-          <div className="hidden md:block mx-8">
-            <Separator orientation="vertical" className="h-full w-2 bg-sdm-red" />
+          <div className="hidden md:block mx-6">
+            <Separator orientation="vertical" className="h-full w-4 bg-sdm-red" />
           </div>
           
           <div className="md:w-2/3">
