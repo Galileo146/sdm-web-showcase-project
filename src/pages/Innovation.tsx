@@ -1,9 +1,12 @@
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import Hero from "../components/Hero";
 import InterestSection from "../components/InterestSection";
+
 const Innovation = () => {
   const certifications = [{
     logo: "/lovable-uploads/d660197a-3274-41b5-8867-d0f1bc5e09d5.png",
@@ -51,10 +54,12 @@ const Innovation = () => {
         <div className="container-wide">
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/3 mb-6 md:mb-0 pr-0 md:pr-8 relative">
-              <h2 className="text-3xl md:text-4xl font-bold relative pl-0 md:pl-6">
-                LE NOSTRE<br />CERTIFICAZIONI
-              </h2>
-              <div className="absolute top-0 bottom-0 left-0 w-1 bg-sdm-red hidden md:block"></div>
+              <div className="flex">
+                <div className="min-h-full w-1 bg-sdm-red mr-4"></div>
+                <h2 className="text-3xl md:text-4xl font-bold">
+                  LE NOSTRE<br />CERTIFICAZIONI
+                </h2>
+              </div>
             </div>
             <div className="md:w-2/3">
               <p className="text-gray-700">
@@ -85,10 +90,12 @@ const Innovation = () => {
         <div className="container-wide">
           <div className="flex flex-col md:flex-row mb-12">
             <div className="md:w-1/3 mb-6 md:mb-0 pr-0 md:pr-8 relative">
-              <h2 className="text-3xl md:text-4xl font-bold relative pl-0 md:pl-6">
-                INNOVAZIONI ED<br />INVESTIMENTI
-              </h2>
-              <div className="absolute top-0 bottom-0 left-0 w-1 bg-sdm-red hidden md:block"></div>
+              <div className="flex">
+                <div className="min-h-full w-1 bg-sdm-red mr-4"></div>
+                <h2 className="text-3xl md:text-4xl font-bold">
+                  INNOVAZIONI ED<br />INVESTIMENTI
+                </h2>
+              </div>
             </div>
             <div className="md:w-2/3">
               <p className="text-gray-700">
