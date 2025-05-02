@@ -6,7 +6,9 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi
 } from "@/components/ui/carousel";
+import { useEffect, useCallback } from "react";
 
 interface TimelineItemProps {
   year: string;
@@ -28,8 +30,8 @@ const TimelineItem = ({
   isLeft = false 
 }: TimelineItemProps) => {
   return (
-    <div className={`flex flex-col ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'} items-center mb-20`}>
-      <div className="md:w-1/2 mb-6 md:mb-0">
+    <div className={`flex flex-col ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8`}>
+      <div className="md:w-1/2">
         {hasCarousel ? (
           <Carousel
             opts={{
@@ -41,7 +43,7 @@ const TimelineItem = ({
             <CarouselContent>
               {carouselImages.map((img, idx) => (
                 <CarouselItem key={idx}>
-                  <div className="overflow-hidden rounded-lg">
+                  <div className="overflow-hidden rounded-[20px]">
                     <img
                       src={img}
                       alt={`Timeline image ${idx + 1}`}
@@ -57,7 +59,7 @@ const TimelineItem = ({
             </div>
           </Carousel>
         ) : (
-          <div className="overflow-hidden rounded-lg">
+          <div className="overflow-hidden rounded-[20px]">
             <img
               src={image}
               alt={title}
@@ -67,15 +69,17 @@ const TimelineItem = ({
         )}
       </div>
       
-      <div className={`md:w-1/2 ${isLeft ? 'md:pl-12' : 'md:pr-12'}`}>
-        <div className={`flex items-center justify-center md:justify-${isLeft ? 'start' : 'end'} mb-4`}>
-          <div className="bg-sdm-red text-white text-2xl font-bold py-2 px-5 rounded-md">
-            {year}
+      <div className={`md:w-1/2 ${isLeft ? 'md:pr-6' : 'md:pl-6'}`}>
+        <div className="bg-white p-6 rounded-lg shadow-sm relative">
+          <div className="absolute -top-4 left-6">
+            <div className="bg-sdm-red text-white text-lg font-bold py-1 px-4 rounded-md">
+              {year}
+            </div>
           </div>
-        </div>
-        <div className="bg-gradient-to-r from-gray-100 to-white p-6 rounded-lg shadow-sm">
-          <h3 className="text-xl font-bold mb-3">{title}</h3>
-          <p className="text-gray-700">{description}</p>
+          <div className="pt-6">
+            <h3 className="text-xl font-bold mb-3">{title}</h3>
+            <p className="text-gray-700">{description}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -122,6 +126,22 @@ const TimelineSection = () => {
     }
   ];
 
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+    api.on("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api, onSelect]);
+
   return (
     <section className="py-16">
       <div className="container-wide">
@@ -131,25 +151,40 @@ const TimelineSection = () => {
           <h2 className="text-3xl font-bold">STORIA</h2>
         </div>
         
-        {/* Timeline Items */}
-        <div className="relative">
-          {/* Center line for desktop */}
-          <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-1 bg-gray-200 transform -translate-x-1/2"></div>
+        {/* Timeline Items in Carousel */}
+        <Carousel
+          opts={{
+            align: "center",
+            loop: true,
+          }}
+          className="w-full"
+          setApi={setApi}
+        >
+          <CarouselContent>
+            {timelineItems.map((item, index) => (
+              <CarouselItem key={index} className="md:basis-full">
+                <TimelineItem
+                  year={item.year}
+                  title={item.title}
+                  description={item.description}
+                  image={item.image}
+                  hasCarousel={item.hasCarousel}
+                  carouselImages={item.carouselImages}
+                  isLeft={item.isLeft}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
           
-          {/* Timeline content */}
-          {timelineItems.map((item, index) => (
-            <TimelineItem
-              key={index}
-              year={item.year}
-              title={item.title}
-              description={item.description}
-              image={item.image}
-              hasCarousel={item.hasCarousel}
-              carouselImages={item.carouselImages}
-              isLeft={item.isLeft}
+          <div className="flex justify-between items-center mt-10">
+            <CarouselPrevious 
+              className="static transform-none border-0 bg-transparent hover:bg-gray-100 h-10 w-10 rounded-full shadow-md"
             />
-          ))}
-        </div>
+            <CarouselNext 
+              className="static transform-none border-0 bg-transparent hover:bg-gray-100 h-10 w-10 rounded-full shadow-md"
+            />
+          </div>
+        </Carousel>
       </div>
     </section>
   );
