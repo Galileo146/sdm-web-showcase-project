@@ -97,21 +97,21 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="#" className="flex items-center hover:text-sdm-red transition-colors">
-                  <span className="text-sdm-red mr-2">•</span>
-                  La nostra storia
-                </Link>
-              </li>
-              <li>
                 <Link to="/aziende" className="flex items-center hover:text-sdm-red transition-colors">
                   <span className="text-sdm-red mr-2">•</span>
-                  Le nostre aziende
+                  Le aziende
                 </Link>
               </li>
               <li>
-                <Link to="#" className="flex items-center hover:text-sdm-red transition-colors">
+                <Link to="/innovazione-e-qualita" className="flex items-center hover:text-sdm-red transition-colors">
                   <span className="text-sdm-red mr-2">•</span>
-                  Aree di business
+                  Innovazione e qualità
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="flex items-center hover:text-sdm-red transition-colors">
+                  <span className="text-sdm-red mr-2">•</span>
+                  News
                 </Link>
               </li>
             </ul>
