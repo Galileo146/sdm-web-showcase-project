@@ -153,7 +153,7 @@ const TimelineSection = () => {
       
       <style jsx="true">{`
         .story-card {
-          height: 450px;
+          height: 370px;
           display: flex;
           flex-direction: row;
           align-items: stretch;
@@ -177,6 +177,14 @@ const TimelineSection = () => {
           display: flex;
           flex-direction: column;
           justify-content: center;
+        }
+        
+        .year-tag {
+          display: inline-block;
+          padding: 4px 10px;
+          width: auto;
+          min-width: unset;
+          border-radius: 4px;
         }
         
         @media (max-width: 768px) {
