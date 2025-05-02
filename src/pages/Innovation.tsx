@@ -1,10 +1,15 @@
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { useState, useCallback, useEffect } from "react";
+import { CircleDot } from "lucide-react";
+import { cn } from "@/lib/utils";
 import Hero from "../components/Hero";
 import InterestSection from "../components/InterestSection";
+
 const Innovation = () => {
   const certifications = [{
     logo: "/lovable-uploads/d660197a-3274-41b5-8867-d0f1bc5e09d5.png",
@@ -27,22 +32,40 @@ const Innovation = () => {
     iso: "DIN ISO 14001-2015, DIN ISO 45001-2018",
     description: "SYSTEM CERTIFIED"
   }];
+  
   const innovations = [{
-    image: "https://via.placeholder.com/800x500?text=Innovation+Image+1",
+    image: "/lovable-uploads/8ead2349-d6b5-4a0e-a410-12bb902792a3.png",
     title: "NUOVE VASCHE TRATTAMENTI SUPERFICIALI",
     tag: "Attiva da Maggio 2025",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare."
   }, {
-    image: "https://via.placeholder.com/800x500?text=Innovation+Image+2",
+    image: "/lovable-uploads/fb8b76fb-1087-4a61-9acf-9886861c8b6b.png",
     title: "NUOVI SISTEMI DI CONTROLLO",
     tag: "Dal Gennaio 2025",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare."
   }, {
-    image: "https://via.placeholder.com/800x500?text=Innovation+Image+3",
+    image: "/lovable-uploads/8ead2349-d6b5-4a0e-a410-12bb902792a3.png",
     title: "TECNOLOGIE AVANZATE",
     tag: "In sviluppo",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare."
   }];
+  
+  const [api, setApi] = useState(null);
+  const [current, setCurrent] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+    api.on("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api, onSelect]);
+
   return <div>
       {/* Hero Section with the new image */}
       <Hero backgroundImage="/lovable-uploads/d2abc7f7-3e52-45f8-b48b-64603659a72d.png" title="INNOVAZIONE E QUALITÀ" height="450px" />
@@ -53,7 +76,7 @@ const Innovation = () => {
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/3 mb-6 md:mb-0 pr-0 md:pr-8 relative">
               <div className="flex">
-                <div className="min-h-full w-0 bg-sdm-red mr-4"></div>
+                <div className="min-h-full w-1 bg-sdm-red mr-4"></div>
                 <h2 className="text-3xl md:text-4xl font-bold">
                   LE NOSTRE<br />CERTIFICAZIONI
                 </h2>
@@ -61,7 +84,7 @@ const Innovation = () => {
             </div>
             <div className="md:w-2/3">
               <div className="flex">
-                <div className="min-h-full w-1 bg-sdm-red mr-4 hidden md:block"></div>
+                <div className="min-h-full w-1 bg-sdm-red mr-4"></div>
                 <p className="text-gray-700">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare.
                 </p>
@@ -98,7 +121,7 @@ const Innovation = () => {
           <div className="flex flex-col md:flex-row mb-12">
             <div className="md:w-1/3 mb-6 md:mb-0 pr-0 md:pr-8 relative">
               <div className="flex">
-                <div className="min-h-full w-0 bg-sdm-red mr-4"></div>
+                <div className="min-h-full w-1 bg-sdm-red mr-4"></div>
                 <h2 className="text-3xl md:text-4xl font-bold">
                   INNOVAZIONI ED<br />INVESTIMENTI
                 </h2>
@@ -106,7 +129,7 @@ const Innovation = () => {
             </div>
             <div className="md:w-2/3">
               <div className="flex">
-                <div className="min-h-full w-1 bg-sdm-red mr-4 hidden md:block"></div>
+                <div className="min-h-full w-1 bg-sdm-red mr-4"></div>
                 <p className="text-gray-700">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare.
                 </p>
@@ -115,25 +138,56 @@ const Innovation = () => {
           </div>
 
           <div className="relative">
-            <Carousel className="w-full">
+            <Carousel 
+              className="w-full"
+              setApi={setApi}
+              opts={{
+                loop: true,
+                align: "start",
+              }}
+            >
               <CarouselContent>
-                {innovations.map((item, index) => <CarouselItem key={index} className="md:basis-4/5">
+                {innovations.map((item, index) => (
+                  <CarouselItem key={index} className="w-full">
                     <Card className="border-0 shadow-lg overflow-hidden">
                       <CardContent className="p-0">
-                        <div className="flex flex-col md:flex-row bg-white">
-                          <div className="md:w-1/2">
-                            <img src={item.image} alt={item.title} className="w-full h-64 md:h-full object-cover" />
-                          </div>
-                          <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-between">
-                            <div>
-                              <Badge variant="outline" className="mb-2 bg-black text-white">
-                                {item.tag}
-                              </Badge>
-                              <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-                              <p className="text-gray-700">{item.description}</p>
+                        <div className="flex flex-col md:flex-row min-h-[480px]">
+                          {/* Image container - left side (55%) */}
+                          <div className="md:w-[55%] relative">
+                            <img 
+                              src={item.image} 
+                              alt={item.title} 
+                              className="w-full h-full object-cover rounded-[24px]" 
+                            />
+                            
+                            {/* Navigation arrows overlay on image */}
+                            <div className="absolute inset-y-0 left-4 flex items-center">
+                              <CarouselPrevious 
+                                className="relative h-10 w-10 rounded-full bg-white/70 hover:bg-white border-0"
+                              />
                             </div>
-                            <div className="mt-6">
-                              <Button variant="outline" className="border-sdm-red text-sdm-red hover:bg-sdm-red/10">
+                            <div className="absolute inset-y-0 right-4 flex items-center">
+                              <CarouselNext 
+                                className="relative h-10 w-10 rounded-full bg-white/70 hover:bg-white border-0"
+                              />
+                            </div>
+                          </div>
+                          
+                          {/* Content container - right side (45%) */}
+                          <div className="md:w-[45%] p-6 md:p-10 flex flex-col justify-center">
+                            <Badge variant="outline" className="mb-4 bg-black text-white py-1 px-3 text-xs uppercase rounded-xl self-start">
+                              {item.tag}
+                            </Badge>
+                            
+                            <h3 className="text-2xl md:text-3xl font-bold mb-6 uppercase">{item.title}</h3>
+                            
+                            <p className="text-gray-700 leading-relaxed mb-8">{item.description}</p>
+                            
+                            <div className="mt-auto">
+                              <Button 
+                                variant="outline" 
+                                className="border-2 border-sdm-red text-sdm-red hover:bg-sdm-red/10 rounded-full px-8 uppercase"
+                              >
                                 Visita il sito web
                               </Button>
                             </div>
@@ -141,11 +195,23 @@ const Innovation = () => {
                         </div>
                       </CardContent>
                     </Card>
-                  </CarouselItem>)}
+                  </CarouselItem>
+                ))}
               </CarouselContent>
-              <div className="hidden md:block">
-                <CarouselPrevious className="left-2" />
-                <CarouselNext className="right-2" />
+              
+              {/* Pagination dots below */}
+              <div className="flex justify-center gap-2 mt-6">
+                {innovations.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => api?.scrollTo(index)}
+                    className={cn(
+                      "p-0 w-3 h-3 rounded-full transition-all focus:outline-none",
+                      current === index ? "bg-sdm-red" : "bg-gray-300"
+                    )}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
               </div>
             </Carousel>
           </div>
