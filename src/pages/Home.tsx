@@ -1,4 +1,3 @@
-
 import Hero from "../components/Hero";
 import NewsCard from "../components/NewsCard";
 import InterestSection from "../components/InterestSection";
@@ -25,6 +24,7 @@ const Home = () => {
     excerpt: "SDM Polska celebra due anni di attività con risultati eccellenti. La sede di Lublin continua a crescere, assumendo nuovo personale specializzato e ampliando il proprio portfolio clienti...",
     link: "/blog/news-3"
   }];
+  
   return <div>
       {/* Hero Section */}
       <Hero youtubeVideoId="eqlEDkywdCI" preTitle="SDM GROUP" title="DA 25 ANNI TECNOLOGIE ED INNOVAZIONE" />
@@ -36,8 +36,8 @@ const Home = () => {
             <h2 className="text-4xl font-bold leading-tight md:text-3xl">TECNOLOGIA E INNOVAZIONE</h2>
           </div>
           
-          <div className="hidden md:block mx-6">
-            <Separator orientation="vertical" className="h-full w-4 bg-sdm-red" />
+          <div className="hidden md:flex mx-6 items-stretch self-stretch">
+            <div className="w-4 bg-sdm-red h-full"></div>
           </div>
           
           <div className="md:w-2/3">
