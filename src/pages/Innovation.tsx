@@ -98,7 +98,7 @@ const Innovation = () => {
           <div className="flex flex-col md:flex-row mb-12">
             <div className="md:w-1/3 mb-6 md:mb-0 pr-0 md:pr-8 relative">
               <div className="flex">
-                <div className="min-h-full w-1 bg-sdm-red mr-4"></div>
+                <div className="min-h-full w-0 bg-sdm-red mr-4"></div>
                 <h2 className="text-3xl md:text-4xl font-bold">
                   INNOVAZIONI ED<br />INVESTIMENTI
                 </h2>
