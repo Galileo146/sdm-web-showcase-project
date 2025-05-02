@@ -22,6 +22,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="chi-siamo" element={<Home />} /> {/* Temporarily using Home component */}
             <Route path="aziende" element={<Companies />} />
             <Route path="innovazione" element={<Innovation />} />
             <Route path="blog" element={<Blog />} />
