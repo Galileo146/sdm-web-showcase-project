@@ -1,4 +1,3 @@
-
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -8,7 +7,6 @@ import { useState, useCallback, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import Hero from "../components/Hero";
 import InterestSection from "../components/InterestSection";
-
 const Innovation = () => {
   const certifications = [{
     logo: "/lovable-uploads/d660197a-3274-41b5-8867-d0f1bc5e09d5.png",
@@ -31,22 +29,16 @@ const Innovation = () => {
     iso: "DIN ISO 14001-2015, DIN ISO 45001-2018",
     description: "SYSTEM CERTIFIED"
   }];
-  
+
   // Use multiple images for a single innovation instead of multiple innovations
-  const innovationImages = [
-    "/lovable-uploads/8ead2349-d6b5-4a0e-a410-12bb902792a3.png",
-    "/lovable-uploads/fb8b76fb-1087-4a61-9acf-9886861c8b6b.png",
-    "/lovable-uploads/f411fccd-d237-4d9e-889b-989e7872d140.png" // Adding the new image
+  const innovationImages = ["/lovable-uploads/8ead2349-d6b5-4a0e-a410-12bb902792a3.png", "/lovable-uploads/fb8b76fb-1087-4a61-9acf-9886861c8b6b.png", "/lovable-uploads/f411fccd-d237-4d9e-889b-989e7872d140.png" // Adding the new image
   ];
-  
   const [api, setApi] = useState(null);
   const [current, setCurrent] = useState(0);
-
   const onSelect = useCallback(() => {
     if (!api) return;
     setCurrent(api.selectedScrollSnap());
   }, [api]);
-
   useEffect(() => {
     if (!api) return;
     api.on("select", onSelect);
@@ -54,7 +46,6 @@ const Innovation = () => {
       api.off("select", onSelect);
     };
   }, [api, onSelect]);
-
   return <div>
       {/* Hero Section with the new image */}
       <Hero backgroundImage="/lovable-uploads/d2abc7f7-3e52-45f8-b48b-64603659a72d.png" title="INNOVAZIONE E QUALITÀ" height="450px" />
@@ -65,7 +56,7 @@ const Innovation = () => {
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/3 mb-6 md:mb-0 pr-0 md:pr-8 relative">
               <div className="flex">
-                <div className="min-h-full w-1 bg-sdm-red mr-4"></div>
+                <div className="min-h-full w-0 bg-sdm-red mr-4"></div>
                 <h2 className="text-3xl md:text-4xl font-bold">
                   LE NOSTRE<br />CERTIFICAZIONI
                 </h2>
@@ -132,53 +123,29 @@ const Innovation = () => {
               <div className="flex flex-col md:flex-row h-[600px]">
                 {/* Image gallery container - left side (55%) */}
                 <div className="md:w-[55%] relative h-full">
-                  <Carousel 
-                    className="w-full h-full"
-                    setApi={setApi}
-                    opts={{
-                      loop: true,
-                      align: "center",
-                    }}
-                  >
+                  <Carousel className="w-full h-full" setApi={setApi} opts={{
+                  loop: true,
+                  align: "center"
+                }}>
                     <CarouselContent className="h-full">
-                      {innovationImages.map((image, index) => (
-                        <CarouselItem key={index} className="h-full">
+                      {innovationImages.map((image, index) => <CarouselItem key={index} className="h-full">
                           <div className="h-full">
-                            <img 
-                              src={image} 
-                              alt={`Innovation image ${index + 1}`} 
-                              className="w-full h-full object-cover rounded-[24px]" 
-                            />
+                            <img src={image} alt={`Innovation image ${index + 1}`} className="w-full h-full object-cover rounded-[24px]" />
                           </div>
-                        </CarouselItem>
-                      ))}
+                        </CarouselItem>)}
                     </CarouselContent>
                     
                     {/* Navigation arrows positioned at the middle height */}
                     <div className="absolute top-1/2 -translate-y-1/2 left-4 z-10">
-                      <CarouselPrevious 
-                        className="relative h-10 w-10 rounded-full bg-white/70 hover:bg-white border-0"
-                      />
+                      <CarouselPrevious className="relative h-10 w-10 rounded-full bg-white/70 hover:bg-white border-0" />
                     </div>
                     <div className="absolute top-1/2 -translate-y-1/2 right-4 z-10">
-                      <CarouselNext 
-                        className="relative h-10 w-10 rounded-full bg-white/70 hover:bg-white border-0"
-                      />
+                      <CarouselNext className="relative h-10 w-10 rounded-full bg-white/70 hover:bg-white border-0" />
                     </div>
                     
                     {/* Pagination dots below the image */}
                     <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
-                      {innovationImages.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => api?.scrollTo(index)}
-                          className={cn(
-                            "p-0 w-3 h-3 rounded-full transition-all focus:outline-none",
-                            current === index ? "bg-sdm-red" : "bg-white"
-                          )}
-                          aria-label={`Go to slide ${index + 1}`}
-                        />
-                      ))}
+                      {innovationImages.map((_, index) => <button key={index} onClick={() => api?.scrollTo(index)} className={cn("p-0 w-3 h-3 rounded-full transition-all focus:outline-none", current === index ? "bg-sdm-red" : "bg-white")} aria-label={`Go to slide ${index + 1}`} />)}
                     </div>
                   </Carousel>
                 </div>
@@ -199,10 +166,7 @@ const Innovation = () => {
                   </p>
                   
                   <div className="mt-auto">
-                    <Button 
-                      variant="outline" 
-                      className="border-2 border-sdm-red text-sdm-red hover:bg-sdm-red/10 rounded-full px-8 uppercase"
-                    >
+                    <Button variant="outline" className="border-2 border-sdm-red text-sdm-red hover:bg-sdm-red/10 rounded-full px-8 uppercase">
                       Visita il sito web
                     </Button>
                   </div>
