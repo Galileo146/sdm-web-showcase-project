@@ -8,6 +8,7 @@ import {
   CarouselPrevious, 
   CarouselNext 
 } from "@/components/ui/carousel";
+import { useEffect } from "react";
 
 interface Company {
   id: number;
@@ -25,8 +26,24 @@ interface CompanyCardProps {
 
 const CompanyCard = ({ company, reversed, index }: CompanyCardProps) => {
   const [activeImage, setActiveImage] = useState(0);
+  const [api, setApi] = useState<any>(null);
+
+  // Update carousel when active image changes
+  useEffect(() => {
+    if (api) {
+      api.scrollTo(activeImage);
+    }
+  }, [activeImage, api]);
 
   const handleThumbnailClick = (index: number) => {
+    setActiveImage(index);
+    if (api) {
+      api.scrollTo(index);
+    }
+  };
+
+  // Handle carousel change
+  const handleCarouselChange = (index: number) => {
     setActiveImage(index);
   };
 
@@ -71,10 +88,21 @@ const CompanyCard = ({ company, reversed, index }: CompanyCardProps) => {
         {/* Carousel Section */}
         <div className={`${reversed ? 'lg:col-span-6 lg:order-1' : 'lg:col-span-6 lg:order-2'}`}>
           <div className="relative">
-            <Carousel className="w-full mb-4">
+            <Carousel 
+              setApi={setApi}
+              className="w-full mb-4" 
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              onSelect={(api) => {
+                const currentIndex = api.selectedScrollSnap();
+                handleCarouselChange(currentIndex);
+              }}
+            >
               <CarouselContent>
                 {company.images.map((image, i) => (
-                  <CarouselItem key={i} className={activeImage === i ? 'block' : 'hidden'}>
+                  <CarouselItem key={i}>
                     <img 
                       src={image} 
                       alt={`${company.name} Image ${i+1}`} 
@@ -87,21 +115,23 @@ const CompanyCard = ({ company, reversed, index }: CompanyCardProps) => {
               <CarouselNext className="right-2" />
             </Carousel>
             
-            {/* Thumbnails */}
-            <div className="grid grid-cols-5 gap-2">
-              {company.images.map((image, i) => (
-                <button 
-                  key={i} 
-                  onClick={() => handleThumbnailClick(i)}
-                  className={`overflow-hidden rounded-lg ${activeImage === i ? 'ring-2 ring-sdm-red' : ''}`}
-                >
-                  <img 
-                    src={image} 
-                    alt={`Thumbnail ${i+1}`}
-                    className="w-full h-16 object-cover"
-                  />
-                </button>
-              ))}
+            {/* Thumbnails in a single row with overflow hidden */}
+            <div className="w-full overflow-x-auto hide-scrollbar">
+              <div className="flex space-x-2 py-2 min-w-max">
+                {company.images.map((image, i) => (
+                  <button 
+                    key={i} 
+                    onClick={() => handleThumbnailClick(i)}
+                    className={`flex-shrink-0 overflow-hidden rounded-lg ${activeImage === i ? 'ring-2 ring-sdm-red' : ''}`}
+                  >
+                    <img 
+                      src={image} 
+                      alt={`Thumbnail ${i+1}`}
+                      className="w-20 h-16 object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
