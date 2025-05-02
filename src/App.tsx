@@ -10,6 +10,7 @@ import Companies from "./pages/Companies";
 import Innovation from "./pages/Innovation";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
+import AboutUs from "./pages/AboutUs";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +23,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="chi-siamo" element={<Home />} /> {/* Temporarily using Home component */}
+            <Route path="chi-siamo" element={<AboutUs />} />
             <Route path="aziende" element={<Companies />} />
             <Route path="innovazione" element={<Innovation />} />
             <Route path="innovazione-e-qualita" element={<Innovation />} />
