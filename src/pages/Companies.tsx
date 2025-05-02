@@ -65,10 +65,10 @@ const Companies = () => {
     <div>
       {/* 1. Hero Section */}
       <Hero 
-        backgroundImage="https://via.placeholder.com/1920x450?text=Stabilimenti+SDM"
+        backgroundImage="/lovable-uploads/083c20b6-609c-4ff3-906d-782248fabf1a.png"
         title="LE AZIENDE"
         height="450px"
-        centerTitle={true}
+        centerTitle={false}
       />
 
       {/* 2. Group Introduction */}

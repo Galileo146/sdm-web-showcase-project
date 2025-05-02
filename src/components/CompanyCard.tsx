@@ -71,10 +71,10 @@ const CompanyCard = ({ company, reversed, index }: CompanyCardProps) => {
         {/* Carousel Section */}
         <div className={`${reversed ? 'lg:col-span-6 lg:order-1' : 'lg:col-span-6 lg:order-2'}`}>
           <div className="relative">
-            <Carousel className="w-full mb-4" selectedIndex={activeImage}>
+            <Carousel className="w-full mb-4">
               <CarouselContent>
                 {company.images.map((image, i) => (
-                  <CarouselItem key={i}>
+                  <CarouselItem key={i} className={activeImage === i ? 'block' : 'hidden'}>
                     <img 
                       src={image} 
                       alt={`${company.name} Image ${i+1}`} 
