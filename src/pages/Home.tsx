@@ -1,8 +1,11 @@
+
 import Hero from "../components/Hero";
 import NewsCard from "../components/NewsCard";
 import InterestSection from "../components/InterestSection";
 import { Separator } from "@/components/ui/separator";
 import LocationsSection from "../components/LocationsSection";
+import CompanySection from "../components/CompanySection";
+
 const Home = () => {
   const newsItems = [{
     image: "https://via.placeholder.com/600x400?text=News+1",
@@ -48,41 +51,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Locations Section (Updated with reduced spacing) */}
+      {/* Locations Section */}
       <LocationsSection />
 
       {/* Our Companies Section */}
-      <section className="bg-gray-100 section-padding">
-        <div className="container-wide">
-          <h2 className="section-title">Le nostre aziende</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            <div className="card-hover">
-              <img src="https://via.placeholder.com/600x400?text=SDM+Torino" alt="SDM Torino" className="w-full h-64 object-cover rounded-t-lg" />
-              <div className="bg-white p-6 rounded-b-lg">
-                <h3 className="text-xl font-bold mb-2">SDM Torino</h3>
-                <p className="text-gray-600 mb-4">Sede principale con impianti produttivi all'avanguardia.</p>
-                <a href="#" className="text-sdm-red font-medium hover:underline">Scopri di più →</a>
-              </div>
-            </div>
-            <div className="card-hover">
-              <img src="https://via.placeholder.com/600x400?text=SDM+Rivoli" alt="SDM Rivoli" className="w-full h-64 object-cover rounded-t-lg" />
-              <div className="bg-white p-6 rounded-b-lg">
-                <h3 className="text-xl font-bold mb-2">SDM Rivoli</h3>
-                <p className="text-gray-600 mb-4">Centro specializzato per processi speciali e trattamenti.</p>
-                <a href="#" className="text-sdm-red font-medium hover:underline">Scopri di più →</a>
-              </div>
-            </div>
-            <div className="card-hover">
-              <img src="https://via.placeholder.com/600x400?text=SDM+Polska" alt="SDM Polska" className="w-full h-64 object-cover rounded-t-lg" />
-              <div className="bg-white p-6 rounded-b-lg">
-                <h3 className="text-xl font-bold mb-2">SDM Polska</h3>
-                <p className="text-gray-600 mb-4">La nostra presenza nell'Europa dell'Est, in rapida crescita.</p>
-                <a href="#" className="text-sdm-red font-medium hover:underline">Scopri di più →</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CompanySection />
 
       {/* News Section */}
       <section className="section-padding">
