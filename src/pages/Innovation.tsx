@@ -35,7 +35,8 @@ const Innovation = () => {
   // Use multiple images for a single innovation instead of multiple innovations
   const innovationImages = [
     "/lovable-uploads/8ead2349-d6b5-4a0e-a410-12bb902792a3.png",
-    "/lovable-uploads/fb8b76fb-1087-4a61-9acf-9886861c8b6b.png"
+    "/lovable-uploads/fb8b76fb-1087-4a61-9acf-9886861c8b6b.png",
+    "/lovable-uploads/f411fccd-d237-4d9e-889b-989e7872d140.png" // Adding the new image
   ];
   
   const [api, setApi] = useState(null);
@@ -153,20 +154,20 @@ const Innovation = () => {
                       ))}
                     </CarouselContent>
                     
-                    {/* Navigation arrows overlay on image */}
-                    <div className="absolute inset-y-0 left-4 flex items-center">
+                    {/* Navigation arrows positioned at the middle height */}
+                    <div className="absolute top-1/2 -translate-y-1/2 left-4 z-10">
                       <CarouselPrevious 
                         className="relative h-10 w-10 rounded-full bg-white/70 hover:bg-white border-0"
                       />
                     </div>
-                    <div className="absolute inset-y-0 right-4 flex items-center">
+                    <div className="absolute top-1/2 -translate-y-1/2 right-4 z-10">
                       <CarouselNext 
                         className="relative h-10 w-10 rounded-full bg-white/70 hover:bg-white border-0"
                       />
                     </div>
                     
                     {/* Pagination dots below the image */}
-                    <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                    <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
                       {innovationImages.map((_, index) => (
                         <button
                           key={index}
