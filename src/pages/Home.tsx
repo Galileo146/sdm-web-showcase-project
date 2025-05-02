@@ -2,6 +2,7 @@ import Hero from "../components/Hero";
 import NewsCard from "../components/NewsCard";
 import InterestSection from "../components/InterestSection";
 import { Separator } from "@/components/ui/separator";
+
 const Home = () => {
   const newsItems = [{
     image: "https://via.placeholder.com/600x400?text=News+1",
@@ -22,9 +23,13 @@ const Home = () => {
     excerpt: "SDM Polska celebra due anni di attività con risultati eccellenti. La sede di Lublin continua a crescere, assumendo nuovo personale specializzato e ampliando il proprio portfolio clienti...",
     link: "/blog/news-3"
   }];
+  
   return <div>
       {/* Hero Section */}
-      <Hero backgroundImage="https://via.placeholder.com/1920x1080?text=Hero+Industrial+Image" title="Da 25 anni tecnologie ed innovazione" />
+      <Hero 
+        youtubeVideoId="eqlEDkywdCI" 
+        title="Da 25 anni tecnologie ed innovazione" 
+      />
 
       {/* New section with title, red divider, and text */}
       <section className="py-16 container-wide">
@@ -154,4 +159,5 @@ const Home = () => {
       <InterestSection />
     </div>;
 };
+
 export default Home;
