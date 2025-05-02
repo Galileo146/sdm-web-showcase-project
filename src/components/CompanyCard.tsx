@@ -72,11 +72,10 @@ const CompanyCard = ({ company, reversed, index }: CompanyCardProps) => {
             {company.description}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button className="text-sdm-red font-medium hover:underline flex items-center">
+          <div className="flex flex-col items-center text-center">
+            <h4 className="text-sdm-red font-medium text-lg mb-4">
               SCOPRI LE NOSTRE CAPABILITIES
-              <ArrowRight size={16} className="ml-2" />
-            </button>
+            </h4>
             
             <button className="border border-sdm-red text-sdm-red px-5 py-2 rounded flex items-center hover:bg-sdm-red/10 transition-colors">
               VISITA IL NOSTRO SITO WEB
@@ -95,7 +94,7 @@ const CompanyCard = ({ company, reversed, index }: CompanyCardProps) => {
                 align: "start",
                 loop: true,
               }}
-              onSelect={(api) => {
+              onSelect={(api: any) => {
                 const currentIndex = api.selectedScrollSnap();
                 handleCarouselChange(currentIndex);
               }}
