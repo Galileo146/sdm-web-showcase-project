@@ -1,4 +1,6 @@
+
 import { Building2, Users2, MapPin, LineChart } from "lucide-react";
+
 const MissionSection = () => {
   const stats = [{
     icon: <Building2 className="h-7 w-7 text-sdm-red" />,
@@ -22,20 +24,17 @@ const MissionSection = () => {
         {/* Mission Title and Text Section */}
         <div className="flex flex-col md:flex-row mb-16">
           <div className="md:w-1/3 mb-6 md:mb-0">
-            <div className="flex items-start">
-              <div className="w-1 bg-sdm-red h-12 mr-4"></div>
-              <h2 className="text-3xl font-bold">LA NOSTRA MISSION</h2>
-            </div>
+            <h2 className="text-3xl font-bold">LA NOSTRA MISSION</h2>
           </div>
           
-          <div className="md:w-2/3">
+          <div className="md:w-2/3 relative pl-6 md:pl-12">
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-sdm-red"></div>
             <p className="text-gray-700 leading-relaxed">
               S.D.M. Group è specializzata nella progettazione e produzione di componenti di alta precisione per 
               l'industria aerospaziale, automobilistica e manifatturiera. La nostra missione è combinare tecnologia 
               e innovazione per creare soluzioni sostenibili che soddisfino le esigenze dei nostri clienti più esigenti, 
               garantendo qualità e affidabilità in ogni fase del processo produttivo.
             </p>
-            
           </div>
         </div>
 
@@ -64,4 +63,5 @@ const MissionSection = () => {
       </div>
     </section>;
 };
+
 export default MissionSection;
