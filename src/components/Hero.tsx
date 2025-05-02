@@ -12,11 +12,11 @@ interface HeroProps {
 const Hero = ({ backgroundImage, youtubeVideoId, title, subtitle, preTitle }: HeroProps) => {
   return (
     <div 
-      className="hero relative"
+      className="hero min-h-screen w-full relative"
       style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : undefined}
     >
       {youtubeVideoId && (
-        <div className="absolute inset-0 overflow-hidden w-full">
+        <div className="absolute inset-0 overflow-hidden w-full h-full">
           <div className="relative w-full h-full">
             <iframe
               src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=${youtubeVideoId}`}
@@ -31,13 +31,13 @@ const Hero = ({ backgroundImage, youtubeVideoId, title, subtitle, preTitle }: He
         </div>
       )}
       <div className="hero-content relative z-10 text-left flex flex-col items-start justify-end h-full pb-16 pl-8 md:pl-16">
-        {preTitle && <p className="text-xl md:text-2xl font-medium mb-2">{preTitle}</p>}
+        {preTitle && <p className="text-xl md:text-2xl font-medium mb-2 text-white">{preTitle}</p>}
         {typeof title === "string" ? (
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">{title}</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">{title}</h1>
         ) : (
           title
         )}
-        {subtitle && <p className="mt-4 text-lg md:text-xl">{subtitle}</p>}
+        {subtitle && <p className="mt-4 text-lg md:text-xl text-white">{subtitle}</p>}
       </div>
     </div>
   );
