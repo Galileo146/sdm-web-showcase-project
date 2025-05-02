@@ -14,7 +14,7 @@ const Footer = () => {
             {/* Logo */}
             <div className="mb-6">
               <img 
-                src="/lovable-uploads/9cd2aba0-efe4-405f-921b-c42cc939bda6.png" 
+                src="/lovable-uploads/72be639c-a35b-4b78-a0bd-9eadcc9e6299.png" 
                 alt="SDM Group Logo" 
                 className="h-14"
               />
@@ -75,7 +75,7 @@ const Footer = () => {
                 className="bg-[#111] border-[#333] focus:border-sdm-red text-white"
               />
               <Button 
-                className="bg-transparent border border-sdm-red text-white px-6 hover:bg-sdm-red transition-colors"
+                className="bg-sdm-red hover:bg-red-700 text-white transition-colors"
               >
                 INVIA
               </Button>
