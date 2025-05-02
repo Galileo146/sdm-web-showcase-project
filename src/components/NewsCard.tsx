@@ -12,14 +12,16 @@ interface NewsCardProps {
 const NewsCard = ({ image, date, title, excerpt, link }: NewsCardProps) => {
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden card-hover">
-      <img 
-        src={image} 
-        alt={title}
-        className="w-full h-48 object-cover"
-      />
+      <div className="relative h-48 overflow-hidden">
+        <img 
+          src={image} 
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+        />
+      </div>
       <div className="p-6">
         <p className="text-sm text-gray-500 mb-2">{date}</p>
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
+        <h3 className="text-xl font-bold mb-2 hover:text-sdm-red transition-colors">{title}</h3>
         <p className="text-gray-600 mb-4 line-clamp-3">{excerpt}</p>
         <Link 
           to={link}

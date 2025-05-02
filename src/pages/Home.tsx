@@ -1,4 +1,3 @@
-
 import Hero from "../components/Hero";
 import NewsCard from "../components/NewsCard";
 import InterestSection from "../components/InterestSection";
@@ -8,19 +7,19 @@ import CompanySection from "../components/CompanySection";
 
 const Home = () => {
   const newsItems = [{
-    image: "https://via.placeholder.com/600x400?text=News+1",
+    image: "/lovable-uploads/a21ca549-71a7-47da-8f27-0b3723c813e9.png",
     date: "15 Aprile 2025",
     title: "Nuova collaborazione con Leonardo per il settore aerospaziale",
     excerpt: "SDM Group annuncia una nuova importante collaborazione con Leonardo nel settore aerospaziale per lo sviluppo di componenti innovativi ad alta precisione...",
     link: "/blog/news-1"
   }, {
-    image: "https://via.placeholder.com/600x400?text=News+2",
+    image: "/lovable-uploads/ab5578b5-dd1e-4b76-8bbe-7d5fde1fdb4c.png",
     date: "10 Marzo 2025",
     title: "Inaugurazione del nuovo stabilimento di Rivoli",
     excerpt: "A seguito dell'espansione delle attività produttive, SDM Group ha inaugurato il nuovo stabilimento di Rivoli, ampliando la propria capacità produttiva con macchinari di ultima generazione...",
     link: "/blog/news-2"
   }, {
-    image: "https://via.placeholder.com/600x400?text=News+3",
+    image: "/lovable-uploads/6e07a2af-51dd-4640-919a-a612099091a3.png",
     date: "25 Febbraio 2025",
     title: "SDM Polska celebra il secondo anniversario",
     excerpt: "SDM Polska celebra due anni di attività con risultati eccellenti. La sede di Lublin continua a crescere, assumendo nuovo personale specializzato e ampliando il proprio portfolio clienti...",
