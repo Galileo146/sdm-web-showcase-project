@@ -83,7 +83,7 @@ const Companies = () => {
             </div>
             
             <div className="md:col-span-1 flex justify-center">
-              <div className="hidden md:block w-1 bg-sdm-red h-16 rounded-full"></div>
+              <div className="hidden md:block w-1 bg-sdm-red h-32 rounded-full"></div>
             </div>
             
             <div className="md:col-span-8">
