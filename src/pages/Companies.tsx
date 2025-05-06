@@ -1,4 +1,3 @@
-
 import Hero from "../components/Hero";
 import InterestSection from "../components/InterestSection";
 import CompanyCard from "../components/CompanyCard";
@@ -39,7 +38,7 @@ const Companies = () => {
       id: 3,
       name: "SDM POLSKA",
       logo: "/lovable-uploads/28721224-14d7-4c33-b02e-1817cdef47a6.png",
-      description: "La sede polacca, inaugurata nel 2023 a Lublino, rappresenta l'espansione internazionale più recente del gruppo SDM. Questo stabilimento serve i mercati dell'Europa dell'Est, offrendo soluzioni integrate per l'industria automobilistica e meccanica. SDM Polska combina l'esperienza italiana con le competenze locali, creando un ponte strategico per lo sviluppo del business nell'Europa orientale.",
+      description: "Inaugurata nel 2023 a Lublino, la sede polacca rappresenta l'espansione internazionale più recente del gruppo SDM. Questo stabilimento è dedicato alla progettazione e lavorazione di componenti in lamiera per i settori aerospaziale e industriale, offrendo gli stessi standard qualitativi e servizi avanzati della sede di Torino. Grazie alla sua posizione strategica, SDM Polska rafforza la capacità del gruppo di servire il mercato europeo con soluzioni su misura, qualità costante e tempi di produzione ottimizzati.",
       images: [
         "/lovable-uploads/845a12ef-b693-4efd-bc74-47b33025a3f8.png", // Interior facility image
         "/lovable-uploads/2b870560-1fcf-4f8e-bc5a-c6fe55d60192.png", // Exterior building
