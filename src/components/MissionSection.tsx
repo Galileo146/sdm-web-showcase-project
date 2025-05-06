@@ -1,29 +1,30 @@
-
 import { Card, CardContent } from "@/components/ui/card";
-
 const MissionSection = () => {
   const stats = [{
-    icon: "/lovable-uploads/147274b9-f1e0-4d73-941f-cebda32ae82b.png", // Changed to R&D icon
+    icon: "/lovable-uploads/147274b9-f1e0-4d73-941f-cebda32ae82b.png",
+    // Changed to R&D icon
     value: "4",
     label: "SEDI",
     description: "In Italia e Polonia per servire il mercato europeo"
   }, {
-    icon: "/lovable-uploads/f74cffcd-4230-4fc7-ab90-06ef1faad198.png", // Changed to SQM icon
+    icon: "/lovable-uploads/f74cffcd-4230-4fc7-ab90-06ef1faad198.png",
+    // Changed to SQM icon
     value: "+100",
     label: "DIPENDENTI",
     description: "Professionisti qualificati nelle diverse divisioni"
   }, {
-    icon: "/lovable-uploads/68833927-394a-4229-8a44-5bf2d1181413.png", // Changed to SEDI icon
+    icon: "/lovable-uploads/68833927-394a-4229-8a44-5bf2d1181413.png",
+    // Changed to SEDI icon
     value: "7000",
     label: "SQM",
     description: "Di superficie produttiva tra le varie sedi"
   }, {
-    icon: "/lovable-uploads/6f2edb7c-0f60-4590-84f9-796b71b6fd01.png", // Changed to DIPENDENTI icon
+    icon: "/lovable-uploads/6f2edb7c-0f60-4590-84f9-796b71b6fd01.png",
+    // Changed to DIPENDENTI icon
     value: "5%",
     label: "R&D",
     description: "Del fatturato investito in ricerca e sviluppo"
   }];
-
   return <section className="py-12 bg-white">
       <div className="container-wide">
         {/* Mission Title and Text Section */}
@@ -34,12 +35,8 @@ const MissionSection = () => {
           
           <div className="md:w-2/3 relative pl-6 md:pl-12">
             <div className="absolute left-0 top-0 bottom-0 w-1 bg-sdm-red"></div>
-            <p className="text-gray-700 leading-relaxed">
-              S.D.M. Group è specializzata nella progettazione e produzione di componenti di alta precisione per 
-              l'industria aerospaziale, automobilistica e manifatturiera. La nostra missione è combinare tecnologia 
-              e innovazione per creare soluzioni sostenibili che soddisfino le esigenze dei nostri clienti più esigenti, 
-              garantendo qualità e affidabilità in ogni fase del processo produttivo.
-            </p>
+            <p className="text-gray-700 leading-relaxed">In SDM Group crediamo in un’industria manifatturiera moderna, integrata e orientata alla qualità. La nostra missione è offrire un servizio completo a 360 gradi, accompagnando i nostri clienti in ogni fase del processo produttivo: dalla progettazione tecnica alla lavorazione delle lamiere, fino ai trattamenti galvanici e alla fornitura di materiali specializzati.
+Grazie alla sinergia tra le diverse realtà del Gruppo e a una visione internazionale, ci poniamo come partner strategico per le aziende che cercano affidabilità, innovazione e un interlocutore unico per tutte le esigenze produttive.</p>
           </div>
         </div>
 
@@ -70,5 +67,4 @@ const MissionSection = () => {
       </div>
     </section>;
 };
-
 export default MissionSection;
