@@ -1,3 +1,4 @@
+
 import CompanyBox from "./CompanyBox";
 const CompanySection = () => {
   const companies = [{
@@ -7,12 +8,12 @@ const CompanySection = () => {
     link: "/aziende/sdm-torino"
   }, {
     name: "SDM RIVOLI",
-    image: "/lovable-uploads/47b1da09-ea60-4f23-8f94-e43b09aef34f.png",
+    image: "/lovable-uploads/29c5fab9-35c8-4003-b45c-229873cf6e1b.png",
     logo: "/lovable-uploads/c6c4cb73-c784-4f2d-9211-4a6f228649b3.png",
     link: "/aziende/sdm-rivoli"
   }, {
     name: "SDM POLSKA",
-    image: "/lovable-uploads/29c5fab9-35c8-4003-b45c-229873cf6e1b.png",
+    image: "/lovable-uploads/47b1da09-ea60-4f23-8f94-e43b09aef34f.png",
     logo: "/lovable-uploads/3450de51-9bbe-4a52-b147-406028ba7456.png",
     link: "/aziende/sdm-polska"
   }, {
