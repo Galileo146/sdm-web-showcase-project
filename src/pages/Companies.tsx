@@ -25,7 +25,7 @@ const Companies = () => {
       id: 2,
       name: "SDM RIVOLI",
       logo: "/lovable-uploads/b14f24ce-aefb-4334-a544-188b4ed08258.png",
-      description: "Situata nell'area industriale di Rivoli, questa sede è specializzata nella lavorazione di materiali avanzati e componenti di precisione per il settore industriale. Con un focus particolare sull'innovazione tecnologica, SDM Rivoli ospita anche un centro di ricerca e sviluppo dedicato all'implementazione di nuove tecnologie produttive e alla sperimentazione di materiali innovativi.",
+      description: "Situata nell'area industriale di Rivoli, la sede di SDM S.r.l. è specializzata nell'esecuzione di trattamenti galvanici, SurTec 650 e controlli non distruttivi (CND), fondamentali per garantire l'affidabilità e la durata dei componenti destinati al settore industriale e aerospaziale. Lo stabilimento ospita inoltre un centro di ricerca e sviluppo dedicato all'innovazione dei processi produttivi e alla sperimentazione di materiali e trattamenti avanzati, consolidando il ruolo di SDM Rivoli come polo tecnologico del gruppo.",
       images: [
         // Updated with the actual images
         "/lovable-uploads/e145087b-9405-4dab-a4e3-1639632d3532.png", // Building exterior with blue door
