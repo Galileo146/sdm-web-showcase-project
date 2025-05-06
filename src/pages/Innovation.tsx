@@ -108,9 +108,7 @@ const Innovation = () => {
             <div className="md:w-2/3">
               <div className="flex">
                 <div className="min-h-full w-1 bg-sdm-red mr-4"></div>
-                <p className="text-gray-700">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare.
-                </p>
+                <p className="text-gray-700">SDM GROUP investe costantemente in nuovi impianti e nell’ammodernamento delle proprie strutture, con l’obiettivo di migliorare l’efficienza produttiva e ridurre l’impatto ambientale. Ogni intervento è guidato da una visione responsabile e sostenibile, che integra tecnologie all’avanguardia nel pieno rispetto delle normative ambientali.</p>
               </div>
             </div>
           </div>
