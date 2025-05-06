@@ -119,8 +119,8 @@ const LogoSlider = ({ className }: LogoSliderProps) => {
       >
         <CarouselContent className="-ml-2 md:-ml-4">
           {logos.map((logo, index) => (
-            <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/4 lg:basis-1/6">
-              <div className="h-20 p-2 flex items-center justify-center">
+            <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/4 md:basis-1/4 lg:basis-1/4">
+              <div className="h-32 p-4 flex items-center justify-center">
                 <img 
                   src={logo.src} 
                   alt={logo.alt} 

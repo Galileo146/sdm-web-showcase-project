@@ -1,3 +1,4 @@
+
 import Hero from "../components/Hero";
 import NewsCard from "../components/NewsCard";
 import InterestSection from "../components/InterestSection";
@@ -41,7 +42,7 @@ const Home = () => {
           </div>
           
           <div className="md:w-2/3">
-            <p className="leading-relaxed text-base">SDM Group è un gruppo industriale internazionale che riunisce quattro realtà specializzate nella progettazione, lavorazione di lamiere, trattamenti galvanici e fornitura di materiali tecnici per l’industria, con sedi a Torino, Rivoli, Lublin e una rete commerciale consolidata grazie all’esperienza di Chiales Tools.</p>
+            <p className="leading-relaxed text-base">SDM Group è un gruppo industriale internazionale che riunisce quattro realtà specializzate nella progettazione, lavorazione di lamiere, trattamenti galvanici e fornitura di materiali tecnici per l'industria, con sedi a Torino, Rivoli, Lublin e una rete commerciale consolidata grazie all'esperienza di Chiales Tools.</p>
           </div>
         </div>
       </section>
@@ -63,9 +64,9 @@ const Home = () => {
       </section>
 
       {/* Clients Section */}
-      <section className="py-12 bg-zinc-400">
+      <section className="py-16 bg-zinc-400">
         <div className="container-wide">
-          <h2 className="font-bold text-center mb-8 text-3xl text-slate-50">I NOSTRI CLIENTI</h2>
+          <h2 className="font-bold text-center mb-12 text-3xl text-slate-50">I NOSTRI CLIENTI</h2>
           <LogoSlider className="mt-8" />
         </div>
       </section>
