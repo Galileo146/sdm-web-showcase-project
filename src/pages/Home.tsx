@@ -33,7 +33,7 @@ const Home = () => {
       <section className="py-12 container-wide">
         <div className="flex flex-col md:flex-row items-center md:items-start">
           <div className="md:w-1/3 mb-6 md:mb-0">
-            <h2 className="text-4xl font-bold leading-tight md:text-3xl px-[10px]">TECNOLOGIA E INNOVAZIONE</h2>
+            <h2 className="text-4xl font-bold leading-tight md:text-3xl px-[10px]">IL NOSTRO GRUPPO</h2>
           </div>
           
           <div className="hidden md:flex mx-6 items-stretch self-stretch">
