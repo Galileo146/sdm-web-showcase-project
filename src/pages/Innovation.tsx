@@ -154,7 +154,7 @@ const Innovation = () => {
                     In sviluppo
                   </Badge>
                   
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6 uppercase">NUOVE TECNOLOGIE AVANZATE</h3>
+                  <h3 className="text-2xl font-bold mb-6 uppercase md:text-2xl">REPARTO GALVANICA NUOVO IMPIANTO ATTIVO DA MAGGIO2025 PROCESSI GREEN-COMPLIANT</h3>
                   
                   <p className="text-gray-700 leading-relaxed mb-8">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. 
