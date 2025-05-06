@@ -41,11 +41,7 @@ const Home = () => {
           </div>
           
           <div className="md:w-2/3">
-            <p className="leading-relaxed text-base">
-              S.D.M. S.r.l. nasce nel 2000, e ha preso il suo posto tra le aziende piemontesi che lavorano nella 
-              progettazione e produzione di strumenti per il settore manifatturiero industriale soprattutto nel 
-              campo aerospaziale.
-            </p>
+            <p className="leading-relaxed text-base">SDM Group è un gruppo industriale internazionale che riunisce quattro realtà specializzate nella progettazione, lavorazione di lamiere, trattamenti galvanici e fornitura di materiali tecnici per l’industria, con sedi a Torino, Rivoli, Lublin e una rete commerciale consolidata grazie all’esperienza di Chiales Tools.</p>
           </div>
         </div>
       </section>
