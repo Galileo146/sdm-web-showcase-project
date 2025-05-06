@@ -97,6 +97,12 @@ const TimelineSection = () => {
       image: "/lovable-uploads/ba1d52b8-220a-48ce-812c-40e0bdbe4ca6.png",
       hasCarousel: true,
       carouselImages: ["/lovable-uploads/ba1d52b8-220a-48ce-812c-40e0bdbe4ca6.png", "/lovable-uploads/e2e4b026-4a27-4bab-98de-3ce3a87a2a3d.png"]
+    },
+    {
+      year: "2000",
+      title: "Le origini",
+      description: "SDM è nata con una visione chiara: eccellere nel campo della progettazione, sviluppo e costruzione di attrezzature per lavorazioni convenzionali. Fin dai nostri primi passi, ci siamo specializzati nella redazione di documentazione tecnica di alta qualità, supportando la produzione di componenti cruciali per i settori aeronautico e aerospaziale.",
+      image: "/lovable-uploads/4d73b204-8c56-40be-bd09-eed7dcdf9e9f.png"
     }
   ];
 
@@ -160,14 +166,14 @@ const TimelineSection = () => {
           overflow: hidden;
           border-radius: 12px;
           background-color: #ffffff;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
           border: 1px solid rgba(224, 224, 224, 0.5);
           transition: all 0.3s ease-in-out;
         }
         
         .story-card:hover {
           transform: translateY(-3px);
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
         }
         
         .story-card .image-container {
