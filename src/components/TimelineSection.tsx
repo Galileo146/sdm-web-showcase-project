@@ -102,7 +102,7 @@ const TimelineSection = () => {
       year: "2000",
       title: "Le origini",
       description: "SDM è nata con una visione chiara: eccellere nel campo della progettazione, sviluppo e costruzione di attrezzature per lavorazioni convenzionali. Fin dai nostri primi passi, ci siamo specializzati nella redazione di documentazione tecnica di alta qualità, supportando la produzione di componenti cruciali per i settori aeronautico e aerospaziale.",
-      image: "/lovable-uploads/4d73b204-8c56-40be-bd09-eed7dcdf9e9f.png"
+      image: "/lovable-uploads/31948577-f6f8-4ecc-bb51-e221ad46c6be.png"
     }
   ];
 
