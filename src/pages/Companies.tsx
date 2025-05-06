@@ -11,7 +11,7 @@ const Companies = () => {
       id: 1,
       name: "SDM TORINO",
       logo: "/lovable-uploads/988aab65-f764-48d2-9665-c95ef2e0b400.png",
-      description: "Con sede principale a Torino, SDM rappresenta il cuore operativo del gruppo. Lo stabilimento torinese è specializzato nella produzione di componenti ad alta precisione per i settori automotive e aerospaziale, con particolare focus su soluzioni innovative e sostenibili. La nostra sede di Torino integra tecnologie di ultima generazione e processi di produzione all'avanguardia.",
+      description: "Con sede principale a Torino, SDM S.r.l. rappresenta il cuore operativo del gruppo ed è specializzata nella progettazione e lavorazione della lamiera per i settori aerospaziale, elicotteristico, aeronautico e nella realizzazione di attrezzature tecniche. Lo stabilimento torinese unisce tecnologie di ultima generazione e processi produttivi all'avanguardia, garantendo componenti ad alta precisione e soluzioni innovative e sostenibili per le esigenze dell'industria moderna.",
       images: [
         "/lovable-uploads/e0e7d03a-71c6-4e47-aa98-4559b1c0c68d.png", // Elicottero
         "/lovable-uploads/4a711b9a-b8b3-464e-b98b-59c1ba979ffc.png", // Area 1 e 2
