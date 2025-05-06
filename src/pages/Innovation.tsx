@@ -156,12 +156,7 @@ const Innovation = () => {
                   
                   <h3 className="text-2xl font-bold mb-6 uppercase md:text-2xl">REPARTO GALVANICA NUOVO IMPIANTO ATTIVO DA MAGGIO2025 PROCESSI GREEN-COMPLIANT</h3>
                   
-                  <p className="text-gray-700 leading-relaxed mb-8">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. 
-                    Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim 
-                    nisl non condimentum ornare. Duis quis bibendum leo. Integer dignissim nisl non 
-                    condimentum ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
+                  <p className="text-gray-700 leading-relaxed mb-8">A partire da maggio 2025, SDM inaugura un nuovo impianto dedicato ai trattamenti superficiali avanzati su leghe di alluminio e acciaio, completamente green-compliant e in linea con le normative REACH. Il reparto include processi di ossidazione solfo-tartarica, conversione chimica a base di cromo trivalente, preparazione all’incollaggio e passivazione degli acciai, tutti sviluppati per garantire massima resa tecnica, sostenibilità ambientale e sicurezza operativa, senza l’utilizzo di cromo esavalente.</p>
                   
                   <div className="mt-auto">
                     <Button variant="outline" className="border-2 border-sdm-red text-sdm-red hover:bg-sdm-red/10 rounded-full px-8 uppercase">
