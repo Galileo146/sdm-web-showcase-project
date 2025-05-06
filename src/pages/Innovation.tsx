@@ -65,9 +65,7 @@ const Innovation = () => {
             <div className="md:w-2/3">
               <div className="flex">
                 <div className="min-h-full w-1 bg-sdm-red mr-4"></div>
-                <p className="text-gray-700">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec egestas nisl. Suspendisse tincidunt porttitor convallis. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare. Duis quis bibendum leo. Integer dignissim nisl non condimentum ornare.
-                </p>
+                <p className="text-gray-700">Per SDM Group, la qualità è un valore centrale che guida ogni processo. Lavoriamo per il miglioramento continuo, garantendo standard elevati in termini di efficienza, sostenibilità e sicurezza. Le certificazioni ottenute confermano il nostro impegno e ci permettono di offrire soluzioni affidabili e innovative nei settori aerospaziale e industriale.</p>
               </div>
             </div>
           </div>
