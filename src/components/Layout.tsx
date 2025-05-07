@@ -12,10 +12,12 @@ const Layout = () => {
   
   // Set language based on route when location changes
   useEffect(() => {
-    if (isEnglishRoute(location.pathname)) {
-      setLanguage("EN");
-    } else {
-      setLanguage("IT");
+    try {
+      const isEnRoute = isEnglishRoute(location.pathname);
+      console.log(`Layout detected path: ${location.pathname}, setting language to ${isEnRoute ? 'EN' : 'IT'}`);
+      setLanguage(isEnRoute ? "EN" : "IT");
+    } catch (error) {
+      console.error("Error setting language in Layout:", error);
     }
   }, [location.pathname, isEnglishRoute, setLanguage]);
   
