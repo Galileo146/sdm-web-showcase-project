@@ -1,5 +1,6 @@
 
-import React, { createContext, useState, useContext, ReactNode } from "react";
+import React, { createContext, useState, useContext, ReactNode, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 type Language = "IT" | "EN";
 type LanguageLabels = { [key in Language]: string };
@@ -29,6 +30,14 @@ const LanguageContext = createContext<LanguageContextType>({
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>(defaultLanguage);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Initialize language based on route on first load
+  useEffect(() => {
+    const isEnRoute = isEnglishRoute(location.pathname);
+    setLanguage(isEnRoute ? "EN" : "IT");
+  }, []);
 
   // Check if current route is an English route
   const isEnglishRoute = (path: string): boolean => {
@@ -51,7 +60,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     if (language === "EN") {
       // If already an English route, return as is
       if (path.startsWith("/en/")) return path;
-      if (path === "/") return "/en";
+      if (path === "/en") return path;
       // Add /en/ prefix to route
       return `/en${path}`;
     } else {
@@ -65,6 +74,17 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
       return path;
     }
   };
+
+  // Effect to navigate when language changes
+  useEffect(() => {
+    const currentPath = location.pathname;
+    const isCurrentEnglish = isEnglishRoute(currentPath);
+    
+    // Only navigate if language doesn't match current route type
+    if ((language === "EN" && !isCurrentEnglish) || (language === "IT" && isCurrentEnglish)) {
+      navigate(getLocalizedPath(currentPath));
+    }
+  }, [language]);
 
   return (
     <LanguageContext.Provider 

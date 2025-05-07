@@ -15,8 +15,8 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
   const languages = [
-    { code: "IT", label: "Italiano" },
-    { code: "EN", label: "English" }
+    { code: "IT", label: languageLabels.IT },
+    { code: "EN", label: languageLabels.EN }
   ];
 
   const isActive = (path: string) => {
@@ -26,7 +26,8 @@ const Header = () => {
   const handleLanguageChange = (lang: "IT" | "EN") => {
     setLanguage(lang);
     // Navigate to the equivalent page in the selected language
-    navigate(getLocalizedPath(location.pathname));
+    const localizedPath = getLocalizedPath(location.pathname);
+    navigate(localizedPath);
   };
 
   return (
@@ -96,7 +97,8 @@ const Header = () => {
               {t("navLinks.innovation")}
             </Link>
             <Link 
-              to={getLocalizedPath("/blog")} 
+              to={getLocalizedPath("/blog")}
+
               className={`text-white px-4 py-2 transition-colors ${isActive(getLocalizedPath("/blog")) ? 'border-b-2 border-sdm-red' : 'hover:text-gray-300'}`}
             >
               {t("navLinks.news")}

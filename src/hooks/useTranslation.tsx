@@ -16,11 +16,33 @@ export const useTranslation = () => {
       if (result && result[k] !== undefined) {
         result = result[k];
       } else {
+        // If translation is missing, use the other language as fallback
+        const fallbackTranslation = getFallbackTranslation(key);
+        if (fallbackTranslation !== key) {
+          return fallbackTranslation;
+        }
         console.warn(`Translation key not found: ${key}`);
         return key;
       }
     }
 
+    return result;
+  };
+
+  // Fallback to other language if translation is missing
+  const getFallbackTranslation = (key: string) => {
+    const fallbackLang = language === 'EN' ? it : en;
+    const keys = key.split('.');
+    let result: any = fallbackLang;
+    
+    for (const k of keys) {
+      if (result && result[k] !== undefined) {
+        result = result[k];
+      } else {
+        return key;
+      }
+    }
+    
     return result;
   };
 
