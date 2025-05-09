@@ -50,7 +50,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     } catch (error) {
       console.error("Error in language initialization:", error);
     }
-  }, []); // Only run once on component mount
+  }, [location.pathname]); // Update when location changes
 
   // Convert between routes with and without /en prefix
   const getLocalizedPath = (path: string): string => {
@@ -98,12 +98,12 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
       if ((language === "EN" && !isCurrentEnglish) || (language === "IT" && isCurrentEnglish)) {
         const localizedPath = getLocalizedPath(currentPath);
         console.log(`Language changed to ${language}, navigating from ${currentPath} to ${localizedPath}`);
-        navigate(localizedPath);
+        navigate(localizedPath, { replace: true });
       }
     } catch (error) {
       console.error("Error navigating after language change:", error);
     }
-  }, [language, location.pathname, navigate]); // Added dependencies
+  }, [language, location.pathname, navigate]); // Added all dependencies
 
   return (
     <LanguageContext.Provider 

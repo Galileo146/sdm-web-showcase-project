@@ -27,7 +27,7 @@ export const useTranslation = () => {
         } else {
           // If translation is missing, use the other language as fallback
           const fallbackTranslation = getFallbackTranslation(key);
-          if (fallbackTranslation !== key) {
+          if (fallbackTranslation && fallbackTranslation !== key) {
             return fallbackTranslation;
           }
           console.warn(`Translation key not found: ${key} in ${language}`);

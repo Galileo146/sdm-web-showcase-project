@@ -16,7 +16,6 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 
 const queryClient = new QueryClient();
 
-// Wrap the entire application with BrowserRouter first, then LanguageProvider
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
