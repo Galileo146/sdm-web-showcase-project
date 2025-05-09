@@ -30,7 +30,7 @@ export const useTranslation = () => {
           if (fallbackTranslation !== key) {
             return fallbackTranslation;
           }
-          console.warn(`Translation key not found: ${key}`);
+          console.warn(`Translation key not found: ${key} in ${language}`);
           return key;
         }
       }

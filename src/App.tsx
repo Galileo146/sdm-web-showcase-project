@@ -16,13 +16,14 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 
 const queryClient = new QueryClient();
 
+// Wrap the entire application with BrowserRouter first, then LanguageProvider
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <LanguageProvider>
-        <BrowserRouter>
+      <BrowserRouter>
+        <LanguageProvider>
           <Routes>
             {/* Italian Routes */}
             <Route path="/" element={<Layout />}>
@@ -54,8 +55,8 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
-        </BrowserRouter>
-      </LanguageProvider>
+        </LanguageProvider>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
