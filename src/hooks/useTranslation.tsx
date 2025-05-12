@@ -2,6 +2,7 @@
 import { useLanguage } from '../contexts/LanguageContext';
 import { it } from '../locales/it';
 import { en } from '../locales/en';
+import { pl } from '../locales/pl';
 
 export const useTranslation = () => {
   const { language } = useLanguage();
@@ -9,7 +10,8 @@ export const useTranslation = () => {
   // Make sure translations are defined and have the expected structure
   const translations = {
     EN: en || {},
-    IT: it || {}
+    IT: it || {},
+    PL: pl || {}
   };
 
   const t = (key: string) => {
@@ -53,25 +55,39 @@ export const useTranslation = () => {
     if (!key) return '';
     
     try {
-      const fallbackLang = language === 'EN' ? 'IT' : 'EN';
-      const fallbackTranslation = translations[fallbackLang];
-      const keys = key.split('.');
-      let result: any = fallbackTranslation;
+      // Use English as first fallback, then Italian
+      let fallbackLangs = [];
       
-      for (const k of keys) {
-        if (result && result[k] !== undefined) {
-          result = result[k];
-        } else {
-          return null;
+      if (language === 'EN') fallbackLangs = ['IT', 'PL'];
+      else if (language === 'IT') fallbackLangs = ['EN', 'PL'];
+      else fallbackLangs = ['EN', 'IT'];
+      
+      for (const fallbackLang of fallbackLangs) {
+        const fallbackTranslation = translations[fallbackLang];
+        const keys = key.split('.');
+        let result: any = fallbackTranslation;
+        
+        let validTranslation = true;
+        for (const k of keys) {
+          if (result && result[k] !== undefined) {
+            result = result[k];
+          } else {
+            validTranslation = false;
+            break;
+          }
+        }
+        
+        // Check if we found a valid translation
+        if (validTranslation) {
+          // Check if the result is a primitive value that can be displayed
+          if (result === null || result === undefined || typeof result === 'object') {
+            continue; // Try next language
+          }
+          return result;
         }
       }
-
-      // Check if the result is a primitive value that can be displayed
-      if (result === null || result === undefined || typeof result === 'object') {
-        return null;
-      }
       
-      return result;
+      return null;
     } catch (error) {
       console.error(`Fallback translation error for key "${key}":`, error);
       return null;

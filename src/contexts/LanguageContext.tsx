@@ -2,7 +2,7 @@
 import React, { createContext, useState, useContext, ReactNode, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-type Language = "IT" | "EN";
+type Language = "IT" | "EN" | "PL";
 type LanguageLabels = { [key in Language]: string };
 
 interface LanguageContextType {
@@ -10,6 +10,7 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void;
   languageLabels: LanguageLabels;
   isEnglishRoute: (path: string) => boolean;
+  isPolishRoute: (path: string) => boolean;
   getLocalizedPath: (path: string) => string;
 }
 
@@ -17,7 +18,8 @@ const defaultLanguage: Language = "IT";
 
 export const languageLabels: LanguageLabels = {
   IT: "Italiano",
-  EN: "English"
+  EN: "English",
+  PL: "Polski"
 };
 
 // Create a default context to avoid the "undefined" error
@@ -26,6 +28,7 @@ const defaultContextValue: LanguageContextType = {
   setLanguage: () => {},
   languageLabels,
   isEnglishRoute: () => false,
+  isPolishRoute: () => false,
   getLocalizedPath: (path) => path
 };
 
@@ -41,28 +44,41 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     return path.startsWith("/en");
   };
 
+  // Check if current route is a Polish route
+  const isPolishRoute = (path: string): boolean => {
+    return path.startsWith("/pl");
+  };
+
   // Initialize language based on route on first load
   useEffect(() => {
     try {
       const isEnRoute = isEnglishRoute(location.pathname);
-      console.log(`LanguageProvider: Initial path ${location.pathname}, setting language to ${isEnRoute ? 'EN' : 'IT'}`);
-      setLanguage(isEnRoute ? "EN" : "IT");
+      const isPlRoute = isPolishRoute(location.pathname);
+      console.log(`LanguageProvider: Initial path ${location.pathname}, setting language to ${isEnRoute ? 'EN' : isPlRoute ? 'PL' : 'IT'}`);
+      
+      if (isEnRoute) {
+        setLanguage("EN");
+      } else if (isPlRoute) {
+        setLanguage("PL");
+      } else {
+        setLanguage("IT");
+      }
     } catch (error) {
       console.error("Error in language initialization:", error);
     }
   }, [location.pathname]); // Update when location changes
 
-  // Convert between routes with and without /en prefix
+  // Convert between routes with and without /en or /pl prefix
   const getLocalizedPath = (path: string): string => {
     try {
       // Special case for homepage
       if (path === "/") {
-        return language === "EN" ? "/en" : "/";
+        return language === "EN" ? "/en" : language === "PL" ? "/pl" : "/";
       }
       
-      // Special case for English homepage
-      if (path === "/en") {
-        return language === "EN" ? "/en" : "/";
+      // Special case for language homepage
+      if (path === "/en" || path === "/pl") {
+        return language === "EN" ? "/en" : language === "PL" ? "/pl" : "/";
       }
       
       // Handle normal routes
@@ -70,14 +86,34 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
         // If already an English route, return as is
         if (path.startsWith("/en/")) return path;
         if (path === "/en") return path;
+        // Remove Polish prefix if present
+        if (path.startsWith("/pl/")) {
+          path = path.substring(3);
+        }
         // Add /en prefix to route
         return path === "/" ? "/en" : `/en${path}`;
+      } else if (language === "PL") {
+        // If already a Polish route, return as is
+        if (path.startsWith("/pl/")) return path;
+        if (path === "/pl") return path;
+        // Remove English prefix if present
+        if (path.startsWith("/en/")) {
+          path = path.substring(3);
+        }
+        // Add /pl prefix to route
+        return path === "/" ? "/pl" : `/pl${path}`;
       } else {
-        // If this is an English route, remove the /en prefix
+        // If this is an English or Polish route, remove the prefix
         if (path.startsWith("/en/")) {
           return path.substring(3);
         }
         if (path === "/en") {
+          return "/";
+        }
+        if (path.startsWith("/pl/")) {
+          return path.substring(3);
+        }
+        if (path === "/pl") {
           return "/";
         }
         return path;
@@ -95,9 +131,14 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     try {
       const currentPath = location.pathname;
       const isCurrentEnglish = isEnglishRoute(currentPath);
+      const isCurrentPolish = isPolishRoute(currentPath);
       
       // Only navigate if language doesn't match current route type
-      if ((language === "EN" && !isCurrentEnglish) || (language === "IT" && isCurrentEnglish)) {
+      if (
+        (language === "EN" && !isCurrentEnglish) || 
+        (language === "IT" && (isCurrentEnglish || isCurrentPolish)) ||
+        (language === "PL" && !isCurrentPolish)
+      ) {
         const localizedPath = getLocalizedPath(currentPath);
         console.log(`Language changed to ${language}, navigating from ${currentPath} to ${localizedPath}`);
         navigate(localizedPath, { replace: true });
@@ -105,7 +146,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     } catch (error) {
       console.error("Error navigating after language change:", error);
     }
-  }, [language, location, navigate]); // Added all dependencies
+  }, [language, location, navigate]);
 
   return (
     <LanguageContext.Provider 
@@ -114,6 +155,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
         setLanguage, 
         languageLabels,
         isEnglishRoute,
+        isPolishRoute,
         getLocalizedPath
       }}
     >

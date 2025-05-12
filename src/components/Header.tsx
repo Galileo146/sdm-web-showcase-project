@@ -16,14 +16,15 @@ const Header = () => {
   
   const languages = [
     { code: "IT", label: languageLabels.IT },
-    { code: "EN", label: languageLabels.EN }
+    { code: "EN", label: languageLabels.EN },
+    { code: "PL", label: languageLabels.PL }
   ];
 
   const isActive = (path: string) => {
     return location.pathname === path;
   };
 
-  const handleLanguageChange = (lang: "IT" | "EN") => {
+  const handleLanguageChange = (lang: "IT" | "EN" | "PL") => {
     setLanguage(lang);
     // Navigate to the equivalent page in the selected language
     const localizedPath = getLocalizedPath(location.pathname);
@@ -58,7 +59,7 @@ const Header = () => {
                   <button
                     key={lang.code}
                     className="block w-full text-left px-4 py-2 text-white hover:bg-gray-800 transition-colors"
-                    onClick={() => handleLanguageChange(lang.code as "IT" | "EN")}
+                    onClick={() => handleLanguageChange(lang.code as "IT" | "EN" | "PL")}
                   >
                     {lang.label}
                   </button>
@@ -98,7 +99,6 @@ const Header = () => {
             </Link>
             <Link 
               to={getLocalizedPath("/blog")}
-
               className={`text-white px-4 py-2 transition-colors ${isActive(getLocalizedPath("/blog")) ? 'border-b-2 border-sdm-red' : 'hover:text-gray-300'}`}
             >
               {t("navLinks.news")}
@@ -132,7 +132,7 @@ const Header = () => {
                   <button
                     key={lang.code}
                     className={`px-2 py-1 mx-1 ${language === lang.code ? 'bg-sdm-red' : 'bg-gray-800'} rounded`}
-                    onClick={() => handleLanguageChange(lang.code as "IT" | "EN")}
+                    onClick={() => handleLanguageChange(lang.code as "IT" | "EN" | "PL")}
                   >
                     {lang.code}
                   </button>

@@ -10,7 +10,7 @@ const Footer = () => {
   const { language, setLanguage, languageLabels, getLocalizedPath } = useLanguage();
   const { t } = useTranslation();
 
-  const handleLanguageChange = (lang: "IT" | "EN") => {
+  const handleLanguageChange = (lang: "IT" | "EN" | "PL") => {
     setLanguage(lang);
     // The language context will handle the navigation in Layout
   };
@@ -129,7 +129,9 @@ const Footer = () => {
             <div className="mt-6 relative group">
               <button className="flex items-center text-white">
                 <Globe className="w-5 h-5 text-sdm-red mr-2" />
-                <span>{language === "IT" ? "ITALIANO" : "ENGLISH"}</span>
+                <span>
+                  {language === "IT" ? "ITALIANO" : language === "EN" ? "ENGLISH" : "POLSKI"}
+                </span>
                 <ChevronDown className="w-4 h-4 text-sdm-red ml-1" />
               </button>
               <div className="absolute top-full left-0 mt-1 bg-black/90 shadow-lg rounded-md py-2 w-32 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
@@ -144,6 +146,12 @@ const Footer = () => {
                   onClick={() => handleLanguageChange("EN")}
                 >
                   {languageLabels.EN}
+                </button>
+                <button 
+                  className="block w-full text-left px-4 py-2 text-white hover:bg-gray-800 transition-colors"
+                  onClick={() => handleLanguageChange("PL")}
+                >
+                  {languageLabels.PL}
                 </button>
               </div>
             </div>

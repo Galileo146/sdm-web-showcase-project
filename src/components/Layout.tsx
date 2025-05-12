@@ -8,18 +8,27 @@ import LanguageSeo from "./LanguageSeo";
 
 const Layout = () => {
   const location = useLocation();
-  const { setLanguage, isEnglishRoute } = useLanguage();
+  const { setLanguage, isEnglishRoute, isPolishRoute } = useLanguage();
   
   // Set language based on route when location changes
   useEffect(() => {
     try {
       const isEnRoute = isEnglishRoute(location.pathname);
-      console.log(`Layout detected path: ${location.pathname}, setting language to ${isEnRoute ? 'EN' : 'IT'}`);
-      setLanguage(isEnRoute ? "EN" : "IT");
+      const isPlRoute = isPolishRoute(location.pathname);
+      
+      console.log(`Layout detected path: ${location.pathname}, setting language to ${isEnRoute ? 'EN' : isPlRoute ? 'PL' : 'IT'}`);
+      
+      if (isEnRoute) {
+        setLanguage("EN");
+      } else if (isPlRoute) {
+        setLanguage("PL");
+      } else {
+        setLanguage("IT");
+      }
     } catch (error) {
       console.error("Error setting language in Layout:", error);
     }
-  }, [location.pathname, isEnglishRoute, setLanguage]);
+  }, [location.pathname, isEnglishRoute, isPolishRoute, setLanguage]);
   
   return (
     <div className="flex flex-col min-h-screen">
