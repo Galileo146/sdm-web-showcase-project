@@ -30,13 +30,18 @@ export const useTranslation = () => {
           if (fallbackTranslation && fallbackTranslation !== key) {
             return fallbackTranslation;
           }
-          // Return key if no translation found
           console.warn(`Translation key not found: ${key} in ${language}`);
           return key;
         }
       }
 
-      return result || key;
+      // Check if the result is a primitive value that can be displayed
+      if (result === null || result === undefined || typeof result === 'object') {
+        console.warn(`Translation result for key "${key}" is not a displayable value:`, result);
+        return key;
+      }
+
+      return result;
     } catch (error) {
       console.error(`Translation error for key "${key}":`, error);
       return key;
@@ -59,6 +64,11 @@ export const useTranslation = () => {
         } else {
           return null;
         }
+      }
+
+      // Check if the result is a primitive value that can be displayed
+      if (result === null || result === undefined || typeof result === 'object') {
+        return null;
       }
       
       return result;

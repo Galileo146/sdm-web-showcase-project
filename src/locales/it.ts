@@ -104,5 +104,47 @@ export const it = {
     subtitle: "SIAMO QUI PER AIUTARTI",
     description: "Contattaci per una consulenza gratuita e personalizzata. Il nostro team di esperti è pronto ad analizzare le tue esigenze e proporti le soluzioni più adatte alle tue specificità.",
     button: "CONTATTACI ORA"
+  },
+  
+  // Footer Section
+  footer: {
+    mission: "SDM Group è un gruppo industriale internazionale che riunisce quattro realtà specializzate nella progettazione, lavorazione di lamiere, trattamenti galvanici e fornitura di materiali tecnici per l'industria.",
+    newsletter: {
+      title: "NEWSLETTER",
+      description: "Iscriviti alla nostra newsletter per ricevere aggiornamenti sui nostri prodotti e servizi.",
+      placeholder: "La tua email",
+      button: "ISCRIVITI"
+    },
+    company: {
+      title: "LA NOSTRA AZIENDA",
+      aboutUs: "Chi siamo",
+      companies: "Le aziende",
+      innovation: "Innovazione e qualità",
+      news: "News"
+    },
+    resources: {
+      title: "RISORSE",
+      certifications: "Certificazioni",
+      blog: "Blog",
+      faq: "FAQ"
+    },
+    contact: {
+      title: "CONTATTI",
+      contactUs: "Contattaci",
+      support: "Supporto",
+      careers: "Carriere"
+    },
+    location: {
+      title: "SEDE",
+      address: "Indirizzo",
+      phone: "Telefono",
+      email: "Email"
+    },
+    copyright: "Tutti i diritti riservati.",
+    links: {
+      privacy: "Informativa sulla privacy",
+      cookie: "Informativa sui cookie",
+      terms: "Termini di servizio"
+    }
   }
 };

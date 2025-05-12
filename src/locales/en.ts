@@ -104,5 +104,47 @@ export const en = {
     subtitle: "WE'RE HERE TO HELP",
     description: "Contact us for a free and personalized consultation. Our team of experts is ready to analyze your needs and propose the most suitable solutions for your specific requirements.",
     button: "CONTACT US NOW"
+  },
+  
+  // Footer Section
+  footer: {
+    mission: "SDM Group is an international industrial group that brings together four specialized entities in the design, sheet metal processing, galvanic treatments, and supply of technical materials for the industry.",
+    newsletter: {
+      title: "NEWSLETTER",
+      description: "Subscribe to our newsletter to receive updates on our products and services.",
+      placeholder: "Your email",
+      button: "SUBSCRIBE"
+    },
+    company: {
+      title: "OUR COMPANY",
+      aboutUs: "About Us",
+      companies: "Companies",
+      innovation: "Innovation and Quality",
+      news: "News"
+    },
+    resources: {
+      title: "RESOURCES",
+      certifications: "Certifications",
+      blog: "Blog",
+      faq: "FAQ"
+    },
+    contact: {
+      title: "CONTACT",
+      contactUs: "Contact Us",
+      support: "Support",
+      careers: "Careers"
+    },
+    location: {
+      title: "LOCATION",
+      address: "Address",
+      phone: "Phone",
+      email: "Email"
+    },
+    copyright: "All rights reserved.",
+    links: {
+      privacy: "Privacy Policy",
+      cookie: "Cookie Policy",
+      terms: "Terms of Service"
+    }
   }
 };
