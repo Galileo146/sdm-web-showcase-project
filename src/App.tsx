@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Companies from "./pages/Companies";
 import Innovation from "./pages/Innovation";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
@@ -32,6 +33,7 @@ const App = () => (
               <Route path="innovazione" element={<Innovation />} />
               <Route path="innovazione-e-qualita" element={<Innovation />} />
               <Route path="blog" element={<Blog />} />
+              <Route path="blog/:postId" element={<BlogPost />} />
               <Route path="contatti" element={<Contact />} />
               
               {/* English Routes */}
@@ -41,6 +43,7 @@ const App = () => (
               <Route path="en/innovation" element={<Innovation />} />
               <Route path="en/innovation-and-quality" element={<Innovation />} />
               <Route path="en/blog" element={<Blog />} />
+              <Route path="en/blog/:postId" element={<BlogPost />} />
               <Route path="en/contact" element={<Contact />} />
               
               {/* Polish Routes */}
@@ -50,6 +53,7 @@ const App = () => (
               <Route path="pl/innowacje" element={<Innovation />} />
               <Route path="pl/innowacje-i-jakosc" element={<Innovation />} />
               <Route path="pl/blog" element={<Blog />} />
+              <Route path="pl/blog/:postId" element={<BlogPost />} />
               <Route path="pl/kontakt" element={<Contact />} />
               
               {/* Redirects for SEO */}
