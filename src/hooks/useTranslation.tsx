@@ -30,12 +30,13 @@ export const useTranslation = () => {
           if (fallbackTranslation && fallbackTranslation !== key) {
             return fallbackTranslation;
           }
+          // Return key if no translation found
           console.warn(`Translation key not found: ${key} in ${language}`);
           return key;
         }
       }
 
-      return result;
+      return result || key;
     } catch (error) {
       console.error(`Translation error for key "${key}":`, error);
       return key;
@@ -56,14 +57,14 @@ export const useTranslation = () => {
         if (result && result[k] !== undefined) {
           result = result[k];
         } else {
-          return key;
+          return null;
         }
       }
       
       return result;
     } catch (error) {
       console.error(`Fallback translation error for key "${key}":`, error);
-      return key;
+      return null;
     }
   };
 

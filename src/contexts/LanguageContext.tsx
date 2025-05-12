@@ -90,6 +90,8 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Effect to navigate when language changes
   useEffect(() => {
+    if (!navigate || !location) return; // Early return if navigate or location are not available
+    
     try {
       const currentPath = location.pathname;
       const isCurrentEnglish = isEnglishRoute(currentPath);
@@ -103,7 +105,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     } catch (error) {
       console.error("Error navigating after language change:", error);
     }
-  }, [language, location.pathname, navigate]); // Added all dependencies
+  }, [language, location, navigate]); // Added all dependencies
 
   return (
     <LanguageContext.Provider 
